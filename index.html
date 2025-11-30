@@ -1,67 +1,234 @@
-
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV — Abdelmageed Ahmed</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#f3f4f6;
-      color:#111827;
+    /* ----------------------
+       CSS Variables & Global Reset
+       ---------------------- */
+    :root {
+      /* Light Mode Palette */
+      --primary-color: #0077B6; /* Professional Blue */
+      --text-color: #111827;
+      --background-color: #f8f9fa;
+      --card-background: #ffffff;
+      --heading-border: #e9ecef;
+      --skill-background: #e9ecef;
+      --link-color: #0077B6;
+      --header-bg: #2c3e50; /* Darker Header for contrast */
+      --shadow-color: rgba(0, 0, 0, 0.1);
     }
 
-    header{
-      background:#1f2937;
-      color:white;
-      padding:30px 20px;
-      text-align:center;
+    /* Dark Mode Palette */
+    .dark-mode {
+      --primary-color: #90CAF9;
+      --text-color: #e0e0e0;
+      --background-color: #1a1a1a;
+      --card-background: #2b2b2b;
+      --heading-border: #3a3a3a;
+      --skill-background: #3a3a3a;
+      --link-color: #90CAF9;
+      --header-bg: #1c2633;
+      --shadow-color: rgba(255, 255, 255, 0.05);
     }
 
-    a{
-      color:#2563eb;
-      text-decoration:none;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    a:hover{
-      text-decoration:underline;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    .container{
-      max-width:900px;
-      margin:20px auto;
-      background:white;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    /* ----------------------
+       Header & Navigation
+       ---------------------- */
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 40px 20px 30px;
+      text-align: center;
+      position: relative; /* For the toggle button */
     }
 
-    h2{margin-top:30px;color:#1f2937;border-bottom:2px solid #e5e7eb;padding-bottom:6px}
-
-    .section p{margin:8px 0;line-height:1.6}
-
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 5px;
     }
 
-    .skill{
-      background:#e5e7eb;
-      padding:8px 12px;
-      border-radius:6px;
-      font-size:14px;
+    header p {
+      font-size: 1.1em;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    
+    .mode-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: 2px solid white;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.3s, border-color 0.3s;
+    }
+    
+    .mode-toggle:hover {
+        background: rgba(255, 255, 255, 0.1);
     }
 
-    footer{
-      margin-top:30px;
-      text-align:center;
-      padding:15px;
-      font-size:14px;
-      color:#6b7280;
+    /* ----------------------
+       Main Content Container
+       ---------------------- */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: var(--card-background);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      animation: fadeIn 0.8s ease-out;
     }
+
+    /* ----------------------
+       Sections & Headings
+       ---------------------- */
+    h2 {
+      margin-top: 35px;
+      color: var(--primary-color);
+      font-size: 1.6em;
+      font-weight: 600;
+      border-bottom: 3px solid var(--heading-border);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section p {
+      margin: 5px 0;
+    }
+    
+    /* Strong element for job/degree titles */
+    .section strong {
+        font-weight: 600;
+        color: var(--text-color);
+        display: block;
+        margin-top: 10px;
+    }
+
+    .muted {
+      color: #6c757d;
+      font-size: 0.9em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ----------------------
+       Links & Interactivity
+       ---------------------- */
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--primary-color);
+    }
+    
+    .personal-info p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    /* Custom icons for personal info */
+    .personal-info p:before {
+        content: attr(data-icon);
+        font-size: 1.1em;
+        color: var(--primary-color);
+        display: inline-block;
+        width: 20px; /* Aligns the icon block */
+    }
+
+    /* ----------------------
+       Skills Section
+       ---------------------- */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .skill {
+      background: var(--skill-background);
+      color: var(--text-color);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 400;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .skill:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 5px var(--shadow-color);
+    }
+
+    /* ----------------------
+       Footer
+       ---------------------- */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85em;
+      color: #6c757d;
+    }
+
+    /* ----------------------
+       Keyframes & Responsiveness
+       ---------------------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -69,42 +236,44 @@
   <header>
     <h1>Abdelmageed Ahmed Babiker Ahmed</h1>
     <p>HSE Supervisor</p>
+    <button class="mode-toggle" id="mode-toggle">Switch to Dark Mode</button>
   </header>
 
   <div class="container">
 
-    <h2>Profile</h2>
+    <h2>👤 Profile</h2>
     <div class="section">
       <p>
-        Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Skilled in implementing safety policies, conducting risk assessments, delivering Toolbox Talks, and ensuring compliance with environmental and occupational health standards.
+        Motivated and detail-oriented HSE Supervisor with over **1.5 years of experience** in mining operations. Skilled in implementing safety policies, conducting **risk assessments**, delivering **Toolbox Talks**, and ensuring compliance with environmental and occupational health standards.
       </p>
     </div>
 
-    <h2>Personal Information</h2>
-    <div class="section">
-      <p>✉️ Abdelmageedahmedsco@gmail.com</p>
-      <p>📍 Khartoum State, Sudan</p>
-      <p>🔗 <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></p>
-      <p>🔗 <a href="https://www.facebook.com/Neezr" target="_blank">Facebook</a></p>
-      <p>🔗 <a href="https://redrockmining.co/" target="_blank">Company Website</a></p>
+    <h2>ℹ️ Personal Information</h2>
+    <div class="section personal-info">
+      <p data-icon="📧">Abdelmageedahmedsco@gmail.com</p>
+      <p data-icon="📍">Khartoum State, Sudan</p>
+      <p data-icon="🔗"><a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
+      <p data-icon="🔗"><a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a></p>
+      <p data-icon="🏢"><a href="https://redrockmining.co/" target="_blank">Company Website</a></p>
     </div>
 
-    <h2>Work Experience</h2>
+    <h2>💼 Work Experience</h2>
     <div class="section">
-      <p><strong>HSE Supervisor — Red Rock Mining</strong></p>
+      <p><strong>HSE Supervisor</strong></p>
+      <p>Red Rock Mining</p>
       <p class="muted">Nile River State, Sudan | June 2024 – present </p>
-      <p>
-        • Conduct daily Toolbox Talks and site safety inspections.<br>
-        • Ensure compliance with company and legal HSE requirements.<br>
-        • Lead incident investigations and develop corrective actions.<br>
-        • Supervise implementation of risk control measures and PTW procedures.<br>
-        • Deliver safety training and awareness programs.<br>
-        • Monitor waste handling and disposal for environmental compliance.<br>
-        • Prepare and submit monthly HSE reports and KPI analysis.<br>
-      </p>
+      <ul>
+        <li>Conduct daily **Toolbox Talks** and site safety inspections.</li>
+        <li>Ensure compliance with company and legal **HSE requirements**.</li>
+        <li>Lead incident investigations and develop corrective actions.</li>
+        <li>Supervise implementation of **risk control measures** and PTW procedures.</li>
+        <li>Deliver safety training and awareness programs.</li>
+        <li>Monitor waste handling and disposal for environmental compliance.</li>
+        <li>Prepare and submit monthly **HSE reports** and KPI analysis.</li>
+      </ul>
     </div>
 
-    <h2>Skills</h2>
+    <h2>🛠️ Skills</h2>
     <div class="skills">
       <span class="skill">Risk Assessment</span>
       <span class="skill">Incident Investigation</span>
@@ -115,29 +284,62 @@
       <span class="skill">ISO 14001 Awareness</span>
     </div>
 
-    <h2>Education</h2>
+    <h2>🎓 Education</h2>
     <div class="section">
       <p><strong>Bachelor of Mechanical Engineering</strong></p>
       <p>Omdurman Islamic University, Sudan</p>
-      <p class="muted">Expected Graduation: Jun 2026</p>
+      <p class="muted">Expected Graduation: June 2026</p>
     </div>
 
-    <h2>Certifications</h2>
+    <h2>🏆 Certifications</h2>
     <div class="section">
-      <p>• IOSH Managing Safely</p>
+      <ul>
+        <li>IOSH Managing Safely</li>
+      </ul>
     </div>
 
-    <h2>Training Courses</h2>
+    <h2>📚 Training Courses</h2>
     <div class="section">
-      <p>• First Aid Training</p>
-      <p>• Firefighting Training</p>
+      <ul>
+        <li>First Aid Training</li>
+        <li>Firefighting Training</li>
+      </ul>
     </div>
 
   </div>
 
   <footer>
-    © 2025 — Abdelmageed Ahmed CV
+    &copy; 2025 — Abdelmageed Ahmed CV. Built with HTML, CSS, and a little JavaScript.
   </footer>
+
+  <script>
+    const toggleButton = document.getElementById('mode-toggle');
+    const body = document.body;
+    const currentMode = localStorage.getItem('theme');
+
+    // 1. Check if a preferred mode is saved, and apply it on load
+    if (currentMode === 'dark') {
+      body.classList.add('dark-mode');
+      toggleButton.textContent = 'Switch to Light Mode';
+    } else {
+        toggleButton.textContent = 'Switch to Dark Mode';
+    }
+
+    // 2. Add the event listener for the toggle button
+    toggleButton.addEventListener('click', () => {
+      // Toggle the 'dark-mode' class on the body
+      body.classList.toggle('dark-mode');
+
+      // Update the button text and save preference to local storage
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        toggleButton.textContent = 'Switch to Light Mode';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleButton.textContent = 'Switch to Dark Mode';
+      }
+    });
+  </script>
 
 </body>
 </html>
