@@ -2,363 +2,494 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV — Abdelmageed Ahmed</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelmageed Ahmed - HSE Supervisor | Mining Operations Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* ----------------------
-       CSS Variables & Global Reset (Updated Colors)
-       ---------------------- */
+    /* Modern CSS Variables - Professional 2025 Palette */
     :root {
-      /* Light Mode Palette: Deep Teal/Cyan for impact */
-      --primary-color: #00897B; /* Vibrant Teal/Cyan */
-      --text-color: #1a1a1a;
-      --background-color: #f7f9fb; /* Very light subtle grey */
-      --card-background: #ffffff;
-      --heading-border: #e0e0e0;
-      --skill-background: #E8F5E9; /* Light mint/teal background for skills */
-      --skill-text-color: #00695C; /* Darker teal text for skills */
-      --link-color: #00897B;
-      --header-bg: #1c313a; /* Deep Charcoal Blue */
-      --shadow-color: rgba(0, 0, 0, 0.15);
+      --primary-color: #0D9488; /* Professional Teal */
+      --primary-dark: #0F766E;
+      --secondary-color: #F8FAFC;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --background: #FFFFFF;
+      --card-bg: #F9FAFB;
+      --border-color: #E5E7EB;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
     }
 
-    /* Dark Mode Palette (Updated) */
-    .dark-mode {
-      --primary-color: #4DB6AC; /* Lighter Teal for contrast */
-      --text-color: #f0f0f0;
-      --background-color: #121212;
-      --card-background: #1e1e1e;
-      --heading-border: #333333;
-      --skill-background: #3a3a3a;
-      --skill-text-color: #f0f0f0;
-      --link-color: #4DB6AC;
-      --header-bg: #1c2633;
-      --shadow-color: rgba(255, 255, 255, 0.08);
+    /* Dark Mode */
+    [data-theme="dark"] {
+      --primary-color: #14B8A6;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --background: #0F172A;
+      --card-bg: #1E293B;
+      --border-color: #334155;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background-color 0.4s, color 0.4s;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* ----------------------
-       Header & Navigation
-       ---------------------- */
+    /* Enhanced Header */
     header {
-      background: var(--header-bg);
+      background: var(--gradient);
       color: white;
-      padding: 50px 20px 40px; /* Increased padding */
+      padding: clamp(3rem, 8vw, 6rem) 2rem clamp(2rem, 5vw, 3rem);
       text-align: center;
       position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
     header h1 {
-      font-size: 2.8em; /* Slightly larger */
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
 
     header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-      font-weight: 300;
-    }
-    
-    /* Button Style Adjustment */
-    .mode-toggle {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        background: none;
-        border: 2px solid white;
-        color: white;
-        padding: 10px 18px; /* Larger padding */
-        border-radius: 25px; /* More rounded */
-        cursor: pointer;
-        font-size: 15px; /* Slightly larger text */
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        transition: background 0.3s, border-color 0.3s, transform 0.2s;
-    }
-    
-    .mode-toggle:hover {
-        background: rgba(255, 255, 255, 0.15); /* More visible hover */
-        transform: translateY(-1px);
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    /* ----------------------
-       Main Content Container
-       ---------------------- */
+    /* Professional Theme Toggle */
+    .theme-toggle {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Main Container - Modern Card Design */
     .container {
-      max-width: 950px; /* Wider container */
-      margin: 40px auto; /* More margin */
-      background: var(--card-background);
-      padding: 40px; /* Increased padding inside */
-      border-radius: 15px; /* Softer corners */
-      box-shadow: 0 15px 40px var(--shadow-color);
-      animation: fadeIn 0.8s ease-out;
+      max-width: 1000px;
+      margin: clamp(2rem, 5vw, 4rem) auto;
+      padding: clamp(2rem, 5vw, 3rem);
     }
 
-    /* ----------------------
-       Sections & Headings
-       ---------------------- */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+    }
+
+    /* Typography Improvements */
     h2 {
-      margin-top: 40px;
-      color: var(--primary-color);
-      font-size: 1.8em; /* Slightly larger */
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 600;
-      border-bottom: 4px solid var(--heading-border); /* Thicker border */
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .section p {
-      margin: 6px 0;
-      font-size: 1.05em; /* Slightly larger text for readability */
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      line-height: 1.8;
     }
-    
+
     .section strong {
-        font-weight: 600;
-        color: var(--text-color);
-        display: block;
-        margin-top: 12px;
-        font-size: 1.15em;
+      color: var(--text-primary);
+      font-weight: 600;
+      display: block;
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem 0;
     }
 
     .muted {
-      color: #6c757d;
-      font-size: 0.95em;
-      display: block;
-      margin-bottom: 15px;
-    }
-    
-    /* List styling for work experience/training */
-    .section ul {
-        padding-left: 25px;
-        list-style-type: '— '; /* Modern list marker */
-    }
-    .section ul li {
-        margin-bottom: 8px;
-        padding-left: 5px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
     }
 
-    /* ----------------------
-       Links & Personal Info
-       ---------------------- */
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: color 0.3s, opacity 0.3s;
+    /* Enhanced Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
-    a:hover {
-      text-decoration: none;
-      opacity: 0.8;
-      color: var(--primary-color);
-    }
-    
-    .personal-info p {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
-        font-size: 1em;
-    }
-    
-    .personal-info p:before {
-        content: attr(data-icon);
-        font-size: 1.2em; /* Larger icons */
-        color: var(--primary-color);
-        display: inline-block;
-        width: 25px;
-    }
-
-    /* ----------------------
-       Skills Section
-       ---------------------- */
-    .skills {
+    .contact-item {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 25px;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(var(--primary-color), 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(var(--primary-color), 0.1);
+      transition: all 0.3s ease;
     }
 
-    .skill {
-      background: var(--skill-background);
-      color: var(--skill-text-color);
-      padding: 10px 18px; /* Larger skill tags */
-      border-radius: 25px;
-      font-size: 0.9em;
+    .contact-item:hover {
+      background: rgba(var(--primary-color), 0.1);
+      transform: translateX(8px);
+    }
+
+    .contact-item i {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      width: 2rem;
+      text-align: center;
+    }
+
+    /* Modern Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-tag {
+      background: rgba(var(--primary-color), 0.1);
+      color: var(--primary-color);
+      padding: 0.875rem 1.5rem;
+      border-radius: 50px;
       font-weight: 500;
-      transition: background 0.3s, transform 0.2s, color 0.3s;
-      border: 1px solid transparent; /* Prepare for border on hover */
+      font-size: 0.95rem;
+      border: 1px solid rgba(var(--primary-color), 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
     }
 
-    .skill:hover {
+    .skill-tag:hover {
       background: var(--primary-color);
       color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(var(--primary-color), 0.3);
     }
 
-    /* ----------------------
-       Footer
-       ---------------------- */
+    /* Professional Lists */
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section ul li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .section ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
     footer {
-      margin-top: 50px;
       text-align: center;
-      padding: 25px;
-      font-size: 0.9em;
-      color: #6c757d;
-      border-top: 1px solid var(--heading-border);
+      padding: 3rem 2rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      margin-top: 4rem;
     }
 
-    /* ----------------------
-       Keyframes & Responsiveness
-       ---------------------- */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    .section-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .section-card:nth-child(1) { animation-delay: 0.1s; }
+    .section-card:nth-child(2) { animation-delay: 0.2s; }
+    .section-card:nth-child(3) { animation-delay: 0.3s; }
+    .section-card:nth-child(4) { animation-delay: 0.4s; }
+    .section-card:nth-child(5) { animation-delay: 0.5s; }
+    .section-card:nth-child(6) { animation-delay: 0.6s; }
+
+    /* Mobile-First Responsive Design */
     @media (max-width: 768px) {
+      header {
+        clip-path: none;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+
       .container {
-        margin: 20px;
-        padding: 20px;
+        margin: 1.5rem 1rem;
+        padding: 1.5rem 1.25rem;
       }
-      header h1 {
-        font-size: 2.2em;
+
+      .section-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
       }
-      .mode-toggle {
-        top: 15px;
-        right: 15px;
-        padding: 8px 15px;
-        font-size: 14px;
+
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
-      h2 {
-        font-size: 1.5em;
+
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.75rem;
       }
     }
 
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .section-card {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .theme-toggle, footer { display: none; }
+      .section-card { box-shadow: none; border: 1px solid #ccc; }
+      header { clip-path: none; }
+    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Abdelmageed Ahmed Babiker Ahmed</h1>
     <p>HSE Supervisor | Mining Operations Specialist</p>
-    <button class="mode-toggle" id="mode-toggle">Switch to Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+      <i class="fas fa-moon"></i> Dark Mode
+    </button>
   </header>
 
   <div class="container">
-
-    <h2>👤 Profile</h2>
-    <div class="section">
-      <p>
-        Motivated and detail-oriented **HSE Supervisor** with over **1.5 years of experience** in mining operations. Proven ability to implement safety policies, conduct rigorous **risk assessments**, deliver impactful **Toolbox Talks**, and ensure strict compliance with environmental and occupational health standards. Seeking to leverage expertise to drive a culture of safety and operational excellence.
-      </p>
+    <!-- Profile Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-user"></i> Professional Profile</h2>
+      <div class="section">
+        <p>
+          Motivated and detail-oriented <strong>HSE Supervisor</strong> with over <strong>1.5 years of experience</strong> in mining operations. Proven ability to implement safety policies, conduct rigorous <strong>risk assessments</strong>, deliver impactful <strong>Toolbox Talks</strong>, and ensure strict compliance with environmental and occupational health standards. Seeking to leverage expertise to drive a culture of safety and operational excellence.
+        </p>
+      </div>
     </div>
 
-    <h2>ℹ️ Contact & Links</h2>
-    <div class="section personal-info">
-      <p data-icon="📧">Abdelmageedahmedsco@gmail.com</p>
-      <p data-icon="📍">Khartoum State, Sudan</p>
-      <p data-icon="🔗"><a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
-      <p data-icon="🔗"><a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a></p>
-      <p data-icon="🏢"><a href="https://redrockmining.co/" target="_blank">Red Rock Mining Website</a></p>
+    <!-- Contact Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:Abdelmageedahmedsco@gmail.com">Abdelmageedahmedsco@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          Khartoum State, Sudan
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-globe"></i>
+          <a href="https://redrockmining.co/" target="_blank">Red Rock Mining</a>
+        </div>
+      </div>
     </div>
 
-    <h2>💼 Work Experience</h2>
-    <div class="section">
-      <p><strong>HSE Supervisor</strong></p>
-      <p>Red Rock Mining</p>
-      <p class="muted">Nile River State, Sudan | June 2024 – present </p>
-      <ul>
-        <li>Conducted daily **Toolbox Talks** and thorough site safety inspections, drastically reducing minor incidents.</li>
-        <li>Ensured strict compliance with company policies and legal **HSE requirements** (OHS and Environmental).</li>
-        <li>Led and documented detailed incident investigations, developing effective preventative and corrective actions.</li>
-        <li>Supervised implementation of **risk control measures** and managed the Permit-to-Work (PTW) procedures for high-risk activities.</li>
-        <li>Delivered comprehensive safety training and awareness programs to site personnel.</li>
-        <li>Monitored all aspects of waste handling and disposal, maintaining high standards for **environmental compliance**.</li>
-        <li>Prepared and submitted monthly **HSE reports** and KPI analysis to senior management for continuous improvement.</li>
-      </ul>
+    <!-- Experience Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <div class="section">
+        <strong>HSE Supervisor</strong>
+        <p>Red Rock Mining</p>
+        <p class="muted">Nile River State, Sudan | June 2024 – Present</p>
+        <ul>
+          <li>Conducted daily <strong>Toolbox Talks</strong> and thorough site safety inspections, drastically reducing minor incidents.</li>
+          <li>Ensured strict compliance with company policies and legal <strong>HSE requirements</strong> (OHS and Environmental).</li>
+          <li>Led and documented detailed incident investigations, developing effective preventative and corrective actions.</li>
+          <li>Supervised implementation of <strong>risk control measures</strong> and managed the Permit-to-Work (PTW) procedures for high-risk activities.</li>
+          <li>Delivered comprehensive safety training and awareness programs to site personnel.</li>
+          <li>Monitored all aspects of waste handling and disposal, maintaining high standards for <strong>environmental compliance</strong>.</li>
+          <li>Prepared and submitted monthly <strong>HSE reports</strong> and KPI analysis to senior management for continuous improvement.</li>
+        </ul>
+      </div>
     </div>
 
-    <h2>🛠️ Core Competencies</h2>
-    <div class="skills">
-      <span class="skill">Risk Assessment</span>
-      <span class="skill">Incident Investigation</span>
-      <span class="skill">Safety Audits</span>
-      <span class="skill">Toolbox Talks & Training</span>
-      <span class="skill">Permit-to-Work (PTW)</span>
-      <span class="skill">Environmental Management</span>
-      <span class="skill">ISO 45001 Awareness</span>
-      <span class="skill">ISO 14001 Awareness</span>
-      <span class="skill">HSE Reporting & KPI Analysis</span>
+    <!-- Skills Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-tools"></i> Core Competencies</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">Risk Assessment</span>
+        <span class="skill-tag">Incident Investigation</span>
+        <span class="skill-tag">Safety Audits</span>
+        <span class="skill-tag">Toolbox Talks & Training</span>
+        <span class="skill-tag">Permit-to-Work (PTW)</span>
+        <span class="skill-tag">Environmental Management</span>
+        <span class="skill-tag">ISO 45001 Awareness</span>
+        <span class="skill-tag">ISO 14001 Awareness</span>
+        <span class="skill-tag">HSE Reporting & KPI Analysis</span>
+      </div>
     </div>
 
-    <h2>🎓 Education</h2>
-    <div class="section">
-      <p><strong>Bachelor of Mechanical Engineering</strong></p>
-      <p>Omdurman Islamic University, Sudan</p>
-      <p class="muted">Expected Graduation: June 2026</p>
+    <!-- Education Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="section">
+        <strong>Bachelor of Mechanical Engineering</strong>
+        <p>Omdurman Islamic University, Sudan</p>
+        <p class="muted">Expected Graduation: June 2026</p>
+      </div>
     </div>
 
-    <h2>🏆 Certifications & Training</h2>
-    <div class="section">
-      <ul>
-        <li>**IOSH Managing Safely**</li>
-        <li>First Aid Training</li>
-        <li>Firefighting Training</li>
-      </ul>
+    <!-- Certifications Section -->
+    <div class="section-card">
+      <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+      <div class="section">
+        <ul>
+          <li><strong>IOSH Managing Safely</strong></li>
+          <li>First Aid Training</li>
+          <li>Firefighting Training</li>
+        </ul>
+      </div>
     </div>
-
   </div>
 
   <footer>
-    &copy; 2025 — Abdelmageed Ahmed CV. Modernized for professional impact.
+    <p>&copy; 2025 Abdelmageed Ahmed. All rights reserved. | Professional CV Website</p>
   </footer>
 
   <script>
-    const toggleButton = document.getElementById('mode-toggle');
+    // Enhanced Theme Toggle with Local Storage
+    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const currentMode = localStorage.getItem('theme');
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateToggleIcon(savedTheme);
 
-    // Apply saved mode on load
-    if (currentMode === 'dark') {
-      body.classList.add('dark-mode');
-      toggleButton.textContent = 'Switch to Light Mode';
-    } else {
-        toggleButton.textContent = 'Switch to Dark Mode';
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleIcon(newTheme);
+    });
+
+    function updateToggleIcon(theme) {
+      const icon = themeToggle.querySelector('i');
+      const text = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+      
+      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      themeToggle.innerHTML = `${icon.outerHTML} ${text}`;
     }
 
-    // Toggle logic
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-        toggleButton.textContent = 'Switch to Light Mode';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggleButton.textContent = 'Switch to Dark Mode';
-      }
+    // Add scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.section-card').forEach(card => {
+      observer.observe(card);
     });
   </script>
-
 </body>
 </html>
