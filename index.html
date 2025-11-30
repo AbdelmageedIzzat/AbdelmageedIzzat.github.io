@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdelmageed Ahmed - HSE Supervisor | Mining Operations Specialist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    /* Modern CSS Variables - Professional 2025 Palette */
+    /* Simplified and smaller font sizes, no JS, only HTML + CSS */
+
     :root {
-      --primary-color: #0D9488; /* Professional Teal */
-      --primary-dark: #0F766E;
-      --secondary-color: #F8FAFC;
+      --primary-color: #0D9488;
       --text-primary: #111827;
       --text-secondary: #6B7280;
       --background: #FFFFFF;
       --card-bg: #F9FAFB;
       --border-color: #E5E7EB;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    /* Dark Mode */
     [data-theme="dark"] {
       --primary-color: #14B8A6;
       --text-primary: #F9FAFB;
@@ -31,9 +26,7 @@
       --background: #0F172A;
       --card-bg: #1E293B;
       --border-color: #334155;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     * {
@@ -43,314 +36,191 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--background);
       color: var(--text-primary);
-      line-height: 1.7;
-      overflow-x: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      line-height: 1.5;
+      font-size: 14px;
+      padding: 20px 10px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* Enhanced Header */
     header {
-      background: var(--gradient);
+      background: var(--primary-color);
       color: white;
-      padding: clamp(3rem, 8vw, 6rem) 2rem clamp(2rem, 5vw, 3rem);
+      padding: 1.5rem 1rem 1rem;
       text-align: center;
-      position: relative;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
     }
 
     header p {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-size: 1rem;
       font-weight: 400;
-      opacity: 0.95;
-      max-width: 600px;
-      margin: 0 auto;
+      opacity: 0.9;
     }
 
-    /* Professional Theme Toggle */
-    .theme-toggle {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Main Container - Modern Card Design */
     .container {
-      max-width: 1000px;
-      margin: clamp(2rem, 5vw, 4rem) auto;
-      padding: clamp(2rem, 5vw, 3rem);
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .section-card {
       background: var(--card-bg);
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-md);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .section-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .section-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gradient);
-    }
-
-    /* Typography Improvements */
     h2 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 600;
+      font-size: 1.2rem;
       color: var(--primary-color);
-      margin-bottom: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 8px;
     }
 
     .section p {
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-      line-height: 1.8;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
     }
 
     .section strong {
-      color: var(--text-primary);
       font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin: 0.8rem 0 0.4rem 0;
       display: block;
-      font-size: 1.1rem;
-      margin: 1rem 0 0.5rem 0;
     }
 
     .muted {
       color: var(--text-secondary);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
-    /* Enhanced Contact Section */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #095c53;
+      text-decoration: underline;
+    }
+
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: rgba(var(--primary-color), 0.05);
-      border-radius: 12px;
-      border: 1px solid rgba(var(--primary-color), 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .contact-item:hover {
-      background: rgba(var(--primary-color), 0.1);
-      transform: translateX(8px);
+      gap: 10px;
+      font-size: 0.9rem;
     }
 
     .contact-item i {
-      font-size: 1.25rem;
       color: var(--primary-color);
-      width: 2rem;
+      min-width: 20px;
       text-align: center;
-    }
-
-    /* Modern Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .skill-tag {
-      background: rgba(var(--primary-color), 0.1);
-      color: var(--primary-color);
-      padding: 0.875rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      border: 1px solid rgba(var(--primary-color), 0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      text-align: center;
-    }
-
-    .skill-tag:hover {
-      background: var(--primary-color);
-      color: white;
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(var(--primary-color), 0.3);
-    }
-
-    /* Professional Lists */
-    .section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .section ul li {
-      padding: 0.75rem 0;
-      padding-left: 2rem;
-      position: relative;
-      font-size: 1rem;
-    }
-
-    .section ul li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
-      font-weight: bold;
       font-size: 1.1rem;
     }
 
-    /* Footer */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+
+    .skill-tag {
+      background: var(--primary-color);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
     footer {
       text-align: center;
-      padding: 3rem 2rem;
+      margin-top: 30px;
+      font-size: 0.8rem;
       color: var(--text-secondary);
       border-top: 1px solid var(--border-color);
-      margin-top: 4rem;
+      padding: 15px 10px;
     }
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section-card {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-
-    .section-card:nth-child(1) { animation-delay: 0.1s; }
-    .section-card:nth-child(2) { animation-delay: 0.2s; }
-    .section-card:nth-child(3) { animation-delay: 0.3s; }
-    .section-card:nth-child(4) { animation-delay: 0.4s; }
-    .section-card:nth-child(5) { animation-delay: 0.5s; }
-    .section-card:nth-child(6) { animation-delay: 0.6s; }
-
-    /* Mobile-First Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        clip-path: none;
-        padding: 2.5rem 1.5rem;
-      }
-
-      .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-      }
-
-      .container {
-        margin: 1.5rem 1rem;
-        padding: 1.5rem 1.25rem;
-      }
-
-      .section-card {
-        padding: 2rem 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 0.75rem;
-      }
-    }
-
+    /* Responsive for small devices */
     @media (max-width: 480px) {
+      body {
+        font-size: 13px;
+        padding: 15px 8px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
       }
-
-      .section-card {
-        padding: 1.5rem 1.25rem;
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      .theme-toggle, footer { display: none; }
-      .section-card { box-shadow: none; border: 1px solid #ccc; }
-      header { clip-path: none; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Abdelmageed Ahmed Babiker Ahmed</h1>
     <p>HSE Supervisor | Mining Operations Specialist</p>
-    <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
-      <i class="fas fa-moon"></i> Dark Mode
-    </button>
   </header>
 
   <div class="container">
-    <!-- Profile Section -->
     <div class="section-card">
-      <h2><i class="fas fa-user"></i> Professional Profile</h2>
+      <h2><i class="fas fa-user"></i> Profile</h2>
       <div class="section">
         <p>
-          Motivated and detail-oriented <strong>HSE Supervisor</strong> with over <strong>1.5 years of experience</strong> in mining operations. Proven ability to implement safety policies, conduct rigorous <strong>risk assessments</strong>, deliver impactful <strong>Toolbox Talks</strong>, and ensure strict compliance with environmental and occupational health standards. Seeking to leverage expertise to drive a culture of safety and operational excellence.
+          Motivated and detail-oriented <strong>HSE Supervisor</strong> with over <strong>1.5 years of experience</strong> in mining operations. Proven ability to implement safety policies, conduct rigorous <strong>risk assessments</strong>, deliver impactful <strong>Toolbox Talks</strong>, and ensure strict compliance with environmental and occupational health standards.
         </p>
       </div>
     </div>
 
-    <!-- Contact Section -->
     <div class="section-card">
       <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
       <div class="contact-grid">
@@ -377,7 +247,6 @@
       </div>
     </div>
 
-    <!-- Experience Section -->
     <div class="section-card">
       <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
       <div class="section">
@@ -385,34 +254,32 @@
         <p>Red Rock Mining</p>
         <p class="muted">Nile River State, Sudan | June 2024 – Present</p>
         <ul>
-          <li>Conducted daily <strong>Toolbox Talks</strong> and thorough site safety inspections, drastically reducing minor incidents.</li>
-          <li>Ensured strict compliance with company policies and legal <strong>HSE requirements</strong> (OHS and Environmental).</li>
-          <li>Led and documented detailed incident investigations, developing effective preventative and corrective actions.</li>
-          <li>Supervised implementation of <strong>risk control measures</strong> and managed the Permit-to-Work (PTW) procedures for high-risk activities.</li>
-          <li>Delivered comprehensive safety training and awareness programs to site personnel.</li>
-          <li>Monitored all aspects of waste handling and disposal, maintaining high standards for <strong>environmental compliance</strong>.</li>
-          <li>Prepared and submitted monthly <strong>HSE reports</strong> and KPI analysis to senior management for continuous improvement.</li>
+          <li>Conducted daily <strong>Toolbox Talks</strong> and thorough site safety inspections.</li>
+          <li>Ensured strict compliance with company policies and legal <strong>HSE requirements</strong>.</li>
+          <li>Led incident investigations and developed corrective actions.</li>
+          <li>Supervised risk control measures and managed Permit-to-Work procedures.</li>
+          <li>Delivered safety training to site personnel.</li>
+          <li>Monitored waste handling, maintaining environmental compliance.</li>
+          <li>Prepared monthly <strong>HSE reports</strong> and KPI analysis.</li>
         </ul>
       </div>
     </div>
 
-    <!-- Skills Section -->
     <div class="section-card">
       <h2><i class="fas fa-tools"></i> Core Competencies</h2>
       <div class="skills-grid">
         <span class="skill-tag">Risk Assessment</span>
         <span class="skill-tag">Incident Investigation</span>
         <span class="skill-tag">Safety Audits</span>
-        <span class="skill-tag">Toolbox Talks & Training</span>
+        <span class="skill-tag">Toolbox Talks</span>
         <span class="skill-tag">Permit-to-Work (PTW)</span>
         <span class="skill-tag">Environmental Management</span>
-        <span class="skill-tag">ISO 45001 Awareness</span>
-        <span class="skill-tag">ISO 14001 Awareness</span>
-        <span class="skill-tag">HSE Reporting & KPI Analysis</span>
+        <span class="skill-tag">ISO 45001</span>
+        <span class="skill-tag">ISO 14001</span>
+        <span class="skill-tag">HSE Reporting</span>
       </div>
     </div>
 
-    <!-- Education Section -->
     <div class="section-card">
       <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <div class="section">
@@ -422,7 +289,6 @@
       </div>
     </div>
 
-    <!-- Certifications Section -->
     <div class="section-card">
       <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
       <div class="section">
@@ -436,60 +302,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Abdelmageed Ahmed. All rights reserved. | Professional CV Website</p>
+    &copy; 2025 Abdelmageed Ahmed. All rights reserved.
   </footer>
-
-  <script>
-    // Enhanced Theme Toggle with Local Storage
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', savedTheme);
-    updateToggleIcon(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateToggleIcon(newTheme);
-    });
-
-    function updateToggleIcon(theme) {
-      const icon = themeToggle.querySelector('i');
-      const text = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
-      
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-      themeToggle.innerHTML = `${icon.outerHTML} ${text}`;
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Add scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    });
-
-    document.querySelectorAll('.section-card').forEach(card => {
-      observer.observe(card);
-    });
-  </script>
 </body>
 </html>
