@@ -7,32 +7,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     /* ----------------------
-       CSS Variables & Global Reset
+       CSS Variables & Global Reset (Updated Colors)
        ---------------------- */
     :root {
-      /* Light Mode Palette */
-      --primary-color: #0077B6; /* Professional Blue */
-      --text-color: #111827;
-      --background-color: #f8f9fa;
+      /* Light Mode Palette: Deep Teal/Cyan for impact */
+      --primary-color: #00897B; /* Vibrant Teal/Cyan */
+      --text-color: #1a1a1a;
+      --background-color: #f7f9fb; /* Very light subtle grey */
       --card-background: #ffffff;
-      --heading-border: #e9ecef;
-      --skill-background: #e9ecef;
-      --link-color: #0077B6;
-      --header-bg: #2c3e50; /* Darker Header for contrast */
-      --shadow-color: rgba(0, 0, 0, 0.1);
+      --heading-border: #e0e0e0;
+      --skill-background: #E8F5E9; /* Light mint/teal background for skills */
+      --skill-text-color: #00695C; /* Darker teal text for skills */
+      --link-color: #00897B;
+      --header-bg: #1c313a; /* Deep Charcoal Blue */
+      --shadow-color: rgba(0, 0, 0, 0.15);
     }
 
-    /* Dark Mode Palette */
+    /* Dark Mode Palette (Updated) */
     .dark-mode {
-      --primary-color: #90CAF9;
-      --text-color: #e0e0e0;
-      --background-color: #1a1a1a;
-      --card-background: #2b2b2b;
-      --heading-border: #3a3a3a;
+      --primary-color: #4DB6AC; /* Lighter Teal for contrast */
+      --text-color: #f0f0f0;
+      --background-color: #121212;
+      --card-background: #1e1e1e;
+      --heading-border: #333333;
       --skill-background: #3a3a3a;
-      --link-color: #90CAF9;
+      --skill-text-color: #f0f0f0;
+      --link-color: #4DB6AC;
       --header-bg: #1c2633;
-      --shadow-color: rgba(255, 255, 255, 0.05);
+      --shadow-color: rgba(255, 255, 255, 0.08);
     }
 
     * {
@@ -46,7 +48,7 @@
       background: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.4s, color 0.4s;
     }
 
     /* ----------------------
@@ -55,52 +57,55 @@
     header {
       background: var(--header-bg);
       color: white;
-      padding: 40px 20px 30px;
+      padding: 50px 20px 40px; /* Increased padding */
       text-align: center;
-      position: relative; /* For the toggle button */
+      position: relative;
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em; /* Slightly larger */
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     header p {
-      font-size: 1.1em;
-      opacity: 0.8;
+      font-size: 1.2em;
+      opacity: 0.9;
       font-weight: 300;
     }
     
+    /* Button Style Adjustment */
     .mode-toggle {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 25px;
+        right: 25px;
         background: none;
         border: 2px solid white;
         color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
+        padding: 10px 18px; /* Larger padding */
+        border-radius: 25px; /* More rounded */
         cursor: pointer;
-        font-size: 14px;
+        font-size: 15px; /* Slightly larger text */
         font-weight: 600;
-        transition: background 0.3s, border-color 0.3s;
+        letter-spacing: 0.5px;
+        transition: background 0.3s, border-color 0.3s, transform 0.2s;
     }
     
     .mode-toggle:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15); /* More visible hover */
+        transform: translateY(-1px);
     }
 
     /* ----------------------
        Main Content Container
        ---------------------- */
     .container {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 950px; /* Wider container */
+      margin: 40px auto; /* More margin */
       background: var(--card-background);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px var(--shadow-color);
+      padding: 40px; /* Increased padding inside */
+      border-radius: 15px; /* Softer corners */
+      box-shadow: 0 15px 40px var(--shadow-color);
       animation: fadeIn 0.8s ease-out;
     }
 
@@ -108,66 +113,78 @@
        Sections & Headings
        ---------------------- */
     h2 {
-      margin-top: 35px;
+      margin-top: 40px;
       color: var(--primary-color);
-      font-size: 1.6em;
+      font-size: 1.8em; /* Slightly larger */
       font-weight: 600;
-      border-bottom: 3px solid var(--heading-border);
-      padding-bottom: 8px;
-      margin-bottom: 15px;
+      border-bottom: 4px solid var(--heading-border); /* Thicker border */
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .section {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .section p {
-      margin: 5px 0;
+      margin: 6px 0;
+      font-size: 1.05em; /* Slightly larger text for readability */
     }
     
-    /* Strong element for job/degree titles */
     .section strong {
         font-weight: 600;
         color: var(--text-color);
         display: block;
-        margin-top: 10px;
+        margin-top: 12px;
+        font-size: 1.15em;
     }
 
     .muted {
       color: #6c757d;
-      font-size: 0.9em;
+      font-size: 0.95em;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    
+    /* List styling for work experience/training */
+    .section ul {
+        padding-left: 25px;
+        list-style-type: '— '; /* Modern list marker */
+    }
+    .section ul li {
+        margin-bottom: 8px;
+        padding-left: 5px;
     }
 
     /* ----------------------
-       Links & Interactivity
+       Links & Personal Info
        ---------------------- */
     a {
       color: var(--link-color);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color 0.3s, opacity 0.3s;
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      opacity: 0.8;
       color: var(--primary-color);
     }
     
     .personal-info p {
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-size: 1em;
     }
     
-    /* Custom icons for personal info */
     .personal-info p:before {
         content: attr(data-icon);
-        font-size: 1.1em;
+        font-size: 1.2em; /* Larger icons */
         color: var(--primary-color);
         display: inline-block;
-        width: 20px; /* Aligns the icon block */
+        width: 25px;
     }
 
     /* ----------------------
@@ -176,43 +193,45 @@
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 25px;
     }
 
     .skill {
       background: var(--skill-background);
-      color: var(--text-color);
-      padding: 8px 15px;
-      border-radius: 20px;
+      color: var(--skill-text-color);
+      padding: 10px 18px; /* Larger skill tags */
+      border-radius: 25px;
       font-size: 0.9em;
-      font-weight: 400;
-      transition: background 0.3s, transform 0.2s;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s, color 0.3s;
+      border: 1px solid transparent; /* Prepare for border on hover */
     }
 
     .skill:hover {
       background: var(--primary-color);
       color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 2px 5px var(--shadow-color);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     /* ----------------------
        Footer
        ---------------------- */
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       text-align: center;
-      padding: 20px;
-      font-size: 0.85em;
+      padding: 25px;
+      font-size: 0.9em;
       color: #6c757d;
+      border-top: 1px solid var(--heading-border);
     }
 
     /* ----------------------
        Keyframes & Responsiveness
        ---------------------- */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -222,10 +241,16 @@
         padding: 20px;
       }
       header h1 {
-        font-size: 2em;
+        font-size: 2.2em;
+      }
+      .mode-toggle {
+        top: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 14px;
       }
       h2 {
-        font-size: 1.4em;
+        font-size: 1.5em;
       }
     }
 
@@ -235,7 +260,7 @@
 
   <header>
     <h1>Abdelmageed Ahmed Babiker Ahmed</h1>
-    <p>HSE Supervisor</p>
+    <p>HSE Supervisor | Mining Operations Specialist</p>
     <button class="mode-toggle" id="mode-toggle">Switch to Dark Mode</button>
   </header>
 
@@ -244,17 +269,17 @@
     <h2>👤 Profile</h2>
     <div class="section">
       <p>
-        Motivated and detail-oriented HSE Supervisor with over **1.5 years of experience** in mining operations. Skilled in implementing safety policies, conducting **risk assessments**, delivering **Toolbox Talks**, and ensuring compliance with environmental and occupational health standards.
+        Motivated and detail-oriented **HSE Supervisor** with over **1.5 years of experience** in mining operations. Proven ability to implement safety policies, conduct rigorous **risk assessments**, deliver impactful **Toolbox Talks**, and ensure strict compliance with environmental and occupational health standards. Seeking to leverage expertise to drive a culture of safety and operational excellence.
       </p>
     </div>
 
-    <h2>ℹ️ Personal Information</h2>
+    <h2>ℹ️ Contact & Links</h2>
     <div class="section personal-info">
       <p data-icon="📧">Abdelmageedahmedsco@gmail.com</p>
       <p data-icon="📍">Khartoum State, Sudan</p>
       <p data-icon="🔗"><a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
       <p data-icon="🔗"><a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a></p>
-      <p data-icon="🏢"><a href="https://redrockmining.co/" target="_blank">Company Website</a></p>
+      <p data-icon="🏢"><a href="https://redrockmining.co/" target="_blank">Red Rock Mining Website</a></p>
     </div>
 
     <h2>💼 Work Experience</h2>
@@ -263,25 +288,27 @@
       <p>Red Rock Mining</p>
       <p class="muted">Nile River State, Sudan | June 2024 – present </p>
       <ul>
-        <li>Conduct daily **Toolbox Talks** and site safety inspections.</li>
-        <li>Ensure compliance with company and legal **HSE requirements**.</li>
-        <li>Lead incident investigations and develop corrective actions.</li>
-        <li>Supervise implementation of **risk control measures** and PTW procedures.</li>
-        <li>Deliver safety training and awareness programs.</li>
-        <li>Monitor waste handling and disposal for environmental compliance.</li>
-        <li>Prepare and submit monthly **HSE reports** and KPI analysis.</li>
+        <li>Conducted daily **Toolbox Talks** and thorough site safety inspections, drastically reducing minor incidents.</li>
+        <li>Ensured strict compliance with company policies and legal **HSE requirements** (OHS and Environmental).</li>
+        <li>Led and documented detailed incident investigations, developing effective preventative and corrective actions.</li>
+        <li>Supervised implementation of **risk control measures** and managed the Permit-to-Work (PTW) procedures for high-risk activities.</li>
+        <li>Delivered comprehensive safety training and awareness programs to site personnel.</li>
+        <li>Monitored all aspects of waste handling and disposal, maintaining high standards for **environmental compliance**.</li>
+        <li>Prepared and submitted monthly **HSE reports** and KPI analysis to senior management for continuous improvement.</li>
       </ul>
     </div>
 
-    <h2>🛠️ Skills</h2>
+    <h2>🛠️ Core Competencies</h2>
     <div class="skills">
       <span class="skill">Risk Assessment</span>
       <span class="skill">Incident Investigation</span>
       <span class="skill">Safety Audits</span>
-      <span class="skill">Toolbox Talks</span>
+      <span class="skill">Toolbox Talks & Training</span>
+      <span class="skill">Permit-to-Work (PTW)</span>
       <span class="skill">Environmental Management</span>
       <span class="skill">ISO 45001 Awareness</span>
       <span class="skill">ISO 14001 Awareness</span>
+      <span class="skill">HSE Reporting & KPI Analysis</span>
     </div>
 
     <h2>🎓 Education</h2>
@@ -291,16 +318,10 @@
       <p class="muted">Expected Graduation: June 2026</p>
     </div>
 
-    <h2>🏆 Certifications</h2>
+    <h2>🏆 Certifications & Training</h2>
     <div class="section">
       <ul>
-        <li>IOSH Managing Safely</li>
-      </ul>
-    </div>
-
-    <h2>📚 Training Courses</h2>
-    <div class="section">
-      <ul>
+        <li>**IOSH Managing Safely**</li>
         <li>First Aid Training</li>
         <li>Firefighting Training</li>
       </ul>
@@ -309,7 +330,7 @@
   </div>
 
   <footer>
-    &copy; 2025 — Abdelmageed Ahmed CV. Built with HTML, CSS, and a little JavaScript.
+    &copy; 2025 — Abdelmageed Ahmed CV. Modernized for professional impact.
   </footer>
 
   <script>
@@ -317,7 +338,7 @@
     const body = document.body;
     const currentMode = localStorage.getItem('theme');
 
-    // 1. Check if a preferred mode is saved, and apply it on load
+    // Apply saved mode on load
     if (currentMode === 'dark') {
       body.classList.add('dark-mode');
       toggleButton.textContent = 'Switch to Light Mode';
@@ -325,12 +346,10 @@
         toggleButton.textContent = 'Switch to Dark Mode';
     }
 
-    // 2. Add the event listener for the toggle button
+    // Toggle logic
     toggleButton.addEventListener('click', () => {
-      // Toggle the 'dark-mode' class on the body
       body.classList.toggle('dark-mode');
 
-      // Update the button text and save preference to local storage
       if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
         toggleButton.textContent = 'Switch to Light Mode';
