@@ -11,6 +11,7 @@
       --primary-color: #0D9488;
       --primary-dark: #095c53;
       --primary-light: #14B8A6;
+      --accent-color: #F59E0B;
       --text-primary: #111827;
       --text-secondary: #6B7280;
       --background: #FFFFFF;
@@ -20,12 +21,14 @@
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       --gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+      --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
     }
 
     [data-theme="dark"] {
       --primary-color: #14B8A6;
       --primary-dark: #0D9488;
       --primary-light: #2DD4BF;
+      --accent-color: #FBBF24;
       --text-primary: #F9FAFB;
       --text-secondary: #D1D5DB;
       --background: #0F172A;
@@ -53,7 +56,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -61,11 +64,12 @@
     header {
       background: var(--gradient);
       color: white;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem 3rem;
       text-align: center;
       margin-bottom: 2rem;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-lg);
     }
 
     header::before {
@@ -83,7 +87,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
       position: relative;
       z-index: 2;
     }
@@ -100,6 +104,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+
+    .profile-image-container::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
     }
 
     .profile-image-container:hover {
@@ -130,17 +158,38 @@
       font-size: 1.5rem;
       font-weight: 400;
       opacity: 0.95;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
     }
 
     .section-card {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 2.2rem;
       margin-bottom: 1.8rem;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent-gradient);
+      opacity: 0.8;
     }
 
     .section-card:hover {
@@ -233,6 +282,11 @@
       gap: 15px;
       font-size: 1.05rem;
       padding: 10px 0;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(5px);
     }
 
     .contact-item i {
@@ -258,12 +312,29 @@
       font-weight: 500;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-tag::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
     }
 
     .skill-tag:hover {
       background: var(--primary-dark);
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
+    }
+
+    .skill-tag:hover::before {
+      left: 100%;
     }
 
     footer {
@@ -301,6 +372,34 @@
     .theme-toggle i {
       font-size: 1.3rem;
       color: var(--primary-color);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-gradient);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: var(--border-color);
+      border-radius: 4px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: var(--accent-gradient);
+      border-radius: 4px;
+      width: 0;
+      transition: width 1.5s ease-in-out;
     }
 
     /* Print styles */
@@ -402,22 +501,26 @@
       <div class="profile-text">
         <h1>Abdelmageed Ahmed Babiker</h1>
         <p>HSE Supervisor | Mining Operations Specialist</p>
+        <p class="tagline">Dedicated to ensuring workplace safety and operational excellence in mining environments</p>
       </div>
     </div>
   </header>
 
   <div class="container">
     <div class="section-card">
-      <h2><i class="fas fa-user"></i> Profile</h2>
+      <h2><i class="fas fa-user"></i> Professional Profile</h2>
       <div class="section">
         <p>
           Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards.
+        </p>
+        <p>
+          Passionate about creating safer work environments through proactive measures and continuous improvement initiatives. Committed to fostering a culture of safety awareness and accountability across all organizational levels.
         </p>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
+      <h2><i class="fas fa-address-book"></i> Contact & Professional Links</h2>
       <div class="contact-grid">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
@@ -443,9 +546,9 @@
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
       <div class="section">
-        <strong>HSE Supervisor</strong>
+        <strong>HSE Supervisor <span class="badge">Current</span></strong>
         <p>Red Rock Mining</p>
         <p class="muted">Nile River State, Sudan | June 2024 – Present</p>
         <ul>
@@ -472,6 +575,9 @@
         <span class="skill-tag">ISO 45001</span>
         <span class="skill-tag">ISO 14001</span>
         <span class="skill-tag">HSE Reporting</span>
+        <span class="skill-tag">Emergency Response</span>
+        <span class="skill-tag">Safety Training</span>
+        <span class="skill-tag">Compliance Monitoring</span>
       </div>
     </div>
 
@@ -481,6 +587,9 @@
         <strong>Bachelor of Mechanical Engineering</strong>
         <p>Omdurman Islamic University, Sudan</p>
         <p class="muted">Expected Graduation: June 2026</p>
+        <div class="progress-bar">
+          <div class="progress" id="educationProgress"></div>
+        </div>
       </div>
     </div>
 
@@ -488,9 +597,9 @@
       <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
       <div class="section">
         <ul>
-          <li><strong>IOSH Managing Safely</strong></li>
-          <li>First Aid Training</li>
-          <li>Firefighting Training</li>
+          <li><strong>IOSH Managing Safely</strong> <span class="badge">Professional</span></li>
+          <li>First Aid Training <span class="badge">Certified</span></li>
+          <li>Firefighting Training <span class="badge">Certified</span></li>
         </ul>
       </div>
     </div>
@@ -526,6 +635,24 @@
         themeIcon.className = 'fas fa-moon';
       }
     }
+
+    // Animate progress bar for education
+    document.addEventListener('DOMContentLoaded', function() {
+      const progressBar = document.getElementById('educationProgress');
+      // Assuming current year is 2025 and graduation is 2026
+      const currentYear = 2025;
+      const startYear = 2022; // Assuming 4-year program starting in 2022
+      const graduationYear = 2026;
+      
+      const totalYears = graduationYear - startYear;
+      const yearsCompleted = currentYear - startYear;
+      const progressPercentage = (yearsCompleted / totalYears) * 100;
+      
+      // Set the progress after a small delay for visual effect
+      setTimeout(() => {
+        progressBar.style.width = `${progressPercentage}%`;
+      }, 500);
+    });
   </script>
 </body>
 </html>
