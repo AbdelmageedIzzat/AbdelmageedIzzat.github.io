@@ -276,7 +276,7 @@
       background: var(--card-bg);
     }
 
-    .theme-toggle {
+    .language-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -294,18 +294,18 @@
       transition: all 0.3s ease;
     }
 
-    .theme-toggle:hover {
+    .language-toggle:hover {
       transform: rotate(15deg) scale(1.1);
     }
 
-    .theme-toggle i {
+    .language-toggle i {
       font-size: 1.1rem;
       color: var(--primary-color);
     }
 
     /* Print styles */
     @media print {
-      .theme-toggle {
+      .language-toggle {
         display: none;
       }
       
@@ -389,8 +389,8 @@
 </head>
 
 <body>
-  <div class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon"></i>
+  <div class="language-toggle" id="languageToggle">
+    <i class="fas fa-language"></i>
   </div>
 
   <header>
@@ -400,24 +400,25 @@
         <img src="pictures/IMG_20250929_110535~4.jpg" alt="Abdelmageed Ahmed" class="profile-image" />
       </div>
       <div class="profile-text">
-        <h1>Abdelmageed Ahmed Babiker</h1>
-        <p>HSE Supervisor | Mining Operations Specialist</p>
+        <h1 data-en="Abdelmageed Ahmed Babiker" data-ar="عبد المجيد أحمد بابكر">Abdelmageed Ahmed Babiker</h1>
+        <p data-en="HSE Supervisor | Mining Operations Specialist" data-ar="مشرف الصحة والسلامة والبيئة | أخصائي عمليات التعدين">HSE Supervisor | Mining Operations Specialist</p>
       </div>
     </div>
   </header>
 
   <div class="container">
     <div class="section-card">
-      <h2><i class="fas fa-user"></i> Profile</h2>
+      <h2><i class="fas fa-user"></i> <span data-en="Profile" data-ar="الملف الشخصي">Profile</span></h2>
       <div class="section">
-        <p>
+        <p data-en="Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards." 
+           data-ar="مشرف صحة وسلامة وبيئة متحمس ومركز على التفاصيل مع خبرة تزيد عن سنة ونصف في عمليات التعدين. قدرة مثبتة على تنفيذ سياسات السلامة، وإجراء تقييمات صارمة للمخاطر، وتقديم محادثات صندوق الأدوات المؤثرة وضمان الامتثال الصارم لمعايير الصحة البيئية والمهنية.">
           Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards.
         </p>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
+      <h2><i class="fas fa-address-book"></i> <span data-en="Contact & Links" data-ar="معلومات الاتصال والروابط">Contact & Links</span></h2>
       <div class="contact-grid">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
@@ -425,107 +426,122 @@
         </div>
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
-          Khartoum State, Sudan
+          <span data-en="Khartoum State, Sudan" data-ar="ولاية الخرطوم، السودان">Khartoum State, Sudan</span>
         </div>
         <div class="contact-item">
           <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a>
+          <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" data-en="LinkedIn Profile" data-ar="الملف الشخصي على LinkedIn">LinkedIn Profile</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-facebook"></i>
-          <a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a>
+          <a href="https://www.facebook.com/Neezr" target="_blank" data-en="Facebook Profile" data-ar="الملف الشخصي على Facebook">Facebook Profile</a>
         </div>
         <div class="contact-item">
           <i class="fas fa-globe"></i>
-          <a href="https://redrockmining.co/" target="_blank">Red Rock Mining</a>
+          <a href="https://redrockmining.co/" target="_blank" data-en="Red Rock Mining" data-ar="ريد روك للتعدين">Red Rock Mining</a>
         </div>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-ar="الخبرة العملية">Work Experience</span></h2>
       <div class="section">
-        <strong>HSE Supervisor</strong>
-        <p>Red Rock Mining</p>
-        <p class="muted">Nile River State, Sudan | June 2024 – Present</p>
+        <strong data-en="HSE Supervisor" data-ar="مشرف الصحة والسلامة والبيئة">HSE Supervisor</strong>
+        <p data-en="Red Rock Mining" data-ar="ريد روك للتعدين">Red Rock Mining</p>
+        <p class="muted" data-en="Nile River State, Sudan | June 2024 – Present" data-ar="ولاية نهر النيل، السودان | يونيو 2024 – حتى الآن">Nile River State, Sudan | June 2024 – Present</p>
         <ul>
-          <li>Conducted daily Toolbox Talks and thorough site safety inspections.</li>
-          <li>Ensured strict compliance with company policies and legal HSE requirements.</li>
-          <li>Led incident investigations and developed corrective actions.</li>
-          <li>Supervised risk control measures and managed Permit-to-Work procedures.</li>
-          <li>Delivered safety training to site personnel.</li>
-          <li>Monitored waste handling, maintaining environmental compliance.</li>
-          <li>Prepared monthly HSE reports and KPI analysis.</li>
+          <li data-en="Conducted daily Toolbox Talks and thorough site safety inspections." data-ar="إجراء محادثات التحسيس الصباحي اليومية وتفتيشات السلامة الموقعية الشاملة.">Conducted daily Toolbox Talks and thorough site safety inspections.</li>
+          <li data-en="Ensured strict compliance with company policies and legal HSE requirements." data-ar="ضمان الامتثال الصارم لسياسات الشركة ومتطلبات الصحة والسلامة والبيئة القانونية.">Ensured strict compliance with company policies and legal HSE requirements.</li>
+          <li data-en="Led incident investigations and developed corrective actions." data-ar="قيادة تحقيقات الحوادث وتطوير إجراءات تصحيحية.">Led incident investigations and developed corrective actions.</li>
+          <li data-en="Supervised risk control measures and managed Permit-to-Work procedures." data-ar="الإشراف على إجراءات التحكم في المخاطر وإدارة إجراءات تصريح العمل.">Supervised risk control measures and managed Permit-to-Work procedures.</li>
+          <li data-en="Delivered safety training to site personnel." data-ar="تقديم تدريبات السلامة لموظفي الموقع.">Delivered safety training to site personnel.</li>
+          <li data-en="Monitored waste handling, maintaining environmental compliance." data-ar="مراقبة التعامل مع النفايات، والحفاظ على الامتثال البيئي.">Monitored waste handling, maintaining environmental compliance.</li>
+          <li data-en="Prepared monthly HSE reports and KPI analysis." data-ar="إعداد تقارير الصحة والسلامة والبيئة الشهرية وتحليل مؤشرات الأداء الرئيسية.">Prepared monthly HSE reports and KPI analysis.</li>
         </ul>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-tools"></i> Core Competencies</h2>
+      <h2><i class="fas fa-tools"></i> <span data-en="Core Competencies" data-ar="الكفاءات الأساسية">Core Competencies</span></h2>
       <div class="skills-grid">
-        <span class="skill-tag">Risk Assessment</span>
-        <span class="skill-tag">Incident Investigation</span>
-        <span class="skill-tag">Safety Audits</span>
-        <span class="skill-tag">Toolbox Talks</span>
-        <span class="skill-tag">Permit-to-Work (PTW)</span>
-        <span class="skill-tag">Environmental Management</span>
-        <span class="skill-tag">ISO 45001</span>
-        <span class="skill-tag">ISO 14001</span>
-        <span class="skill-tag">HSE Reporting</span>
+        <span class="skill-tag" data-en="Risk Assessment" data-ar="تقييم المخاطر">Risk Assessment</span>
+        <span class="skill-tag" data-en="Incident Investigation" data-ar="تحقيق الحوادث">Incident Investigation</span>
+        <span class="skill-tag" data-en="Safety Audits" data-ar="تدقيق السلامة">Safety Audits</span>
+        <span class="skill-tag" data-en="Toolbox Talks" data-ar="التحسيس الصباحي">Toolbox Talks</span>
+        <span class="skill-tag" data-en="Permit-to-Work (PTW)" data-ar="تصريح العمل">Permit-to-Work (PTW)</span>
+        <span class="skill-tag" data-en="Environmental Management" data-ar="الإدارة البيئية">Environmental Management</span>
+        <span class="skill-tag" data-en="ISO 45001" data-ar="الأيزو 45001">ISO 45001</span>
+        <span class="skill-tag" data-en="ISO 14001" data-ar="الأيزو 14001">ISO 14001</span>
+        <span class="skill-tag" data-en="HSE Reporting" data-ar="تقارير الصحة والسلامة والبيئة">HSE Reporting</span>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <h2><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ar="التعليم">Education</span></h2>
       <div class="section">
-        <strong>Bachelor of Mechanical Engineering</strong>
-        <p>Omdurman Islamic University, Sudan</p>
-        <p class="muted">Expected Graduation: June 2026</p>
+        <strong data-en="Bachelor of Mechanical Engineering" data-ar="بكالوريوس في الهندسة الميكانيكية">Bachelor of Mechanical Engineering</strong>
+        <p data-en="Omdurman Islamic University, Sudan" data-ar="جامعة أم درمان الإسلامية، السودان">Omdurman Islamic University, Sudan</p>
+        <p class="muted" data-en="Expected Graduation: June 2026" data-ar="التخرج المتوقع: يونيو 2026">Expected Graduation: June 2026</p>
       </div>
     </div>
 
     <div class="section-card">
-      <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+      <h2><i class="fas fa-certificate"></i> <span data-en="Certifications & Training" data-ar="الشهادات والتدريب">Certifications & Training</span></h2>
       <div class="section">
         <ul>
-          <li><strong>IOSH Managing Safely</strong></li>
-          <li>First Aid Training</li>
-          <li>Firefighting Training</li>
+          <li><strong data-en="IOSH Managing Safely" data-ar="آيوش الادارة بأمان ">IOSH Managing Safely</strong></li>
+          <li data-en="First Aid Training" data-ar="تدريب الإسعافات الأولية">First Aid Training</li>
+          <li data-en="Firefighting Training" data-ar="تدريب مكافحة الحرائق">Firefighting Training</li>
         </ul>
       </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Abdelmageed Ahmed. All rights reserved.
+    <span data-en="&copy; 2025 Abdelmageed Ahmed. All rights reserved." data-ar="&copy; 2025 عبد المجيد أحمد. جميع الحقوق محفوظة.">&copy; 2025 Abdelmageed Ahmed. All rights reserved.</span>
   </footer>
 
   <script>
-    // Simple theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
+    // Language toggle functionality
+    const languageToggle = document.getElementById('languageToggle');
+    const languageIcon = languageToggle.querySelector('i');
     
-    // Check for saved theme preference or default to light
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
+    // Check for saved language preference or default to English
+    const currentLanguage = localStorage.getItem('language') || 'en';
+    document.documentElement.lang = currentLanguage;
+    updateLanguage(currentLanguage);
     
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    languageToggle.addEventListener('click', () => {
+      const currentLanguage = document.documentElement.lang;
+      const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
       
-      document.body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
+      document.documentElement.lang = newLanguage;
+      localStorage.setItem('language', newLanguage);
+      updateLanguage(newLanguage);
     });
     
-    function updateThemeIcon(theme) {
-      if (theme === 'dark') {
-        themeIcon.className = 'fas fa-sun';
+    function updateLanguage(language) {
+      // Update all elements with data attributes
+      const elements = document.querySelectorAll('[data-en], [data-ar]');
+      elements.forEach(element => {
+        if (element.hasAttribute(`data-${language}`)) {
+          if (element.tagName === 'A') {
+            element.textContent = element.getAttribute(`data-${language}`);
+          } else {
+            element.innerHTML = element.getAttribute(`data-${language}`);
+          }
+        }
+      });
+      
+      // Update direction for Arabic
+      if (language === 'ar') {
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
       } else {
-        themeIcon.className = 'fas fa-moon';
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'left';
       }
     }
   </script>
 </body>
-    </html>
+  </html>
