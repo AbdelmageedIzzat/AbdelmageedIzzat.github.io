@@ -6,386 +6,8 @@
   <title>Abdelmageed Ahmed - HSE Supervisor | Mining Operations Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    :root {
-      --primary-color: #0D9488;
-      --primary-dark: #095c53;
-      --primary-light: #14B8A6;
-      --text-primary: #111827;
-      --text-secondary: #6B7280;
-      --background: #FFFFFF;
-      --card-bg: #F9FAFB;
-      --border-color: #E5E7EB;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
-    }
-
-    [data-theme="dark"] {
-      --primary-color: #14B8A6;
-      --primary-dark: #0D9488;
-      --primary-light: #2DD4BF;
-      --text-primary: #F9FAFB;
-      --text-secondary: #D1D5DB;
-      --background: #0F172A;
-      --card-bg: #1E293B;
-      --border-color: #334155;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text-primary);
-      line-height: 1.6;
-      font-size: 15px;
-      padding: 0;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      background: var(--gradient);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.1;
-    }
-
-    .profile-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .profile-image-container {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 5px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      background-color: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .profile-image-container:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .profile-text {
-      text-align: center;
-      max-width: 700px;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    header p {
-      font-size: 1.3rem;
-      font-weight: 400;
-      opacity: 0.95;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .section-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      color: var(--primary-color);
-      margin-bottom: 1.2rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    h2 i {
-      font-size: 1.1rem;
-      width: 24px;
-      text-align: center;
-    }
-
-    .section p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .section strong {
-      font-weight: 600;
-      color: var(--text-primary);
-      font-size: 1rem;
-      margin: 1rem 0 0.5rem 0;
-      display: block;
-    }
-
-    .muted {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.95rem;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.6;
-    }
-
-    ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
-      font-weight: bold;
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.2s ease;
-      font-weight: 500;
-    }
-
-    a:hover {
-      color: var(--primary-dark);
-      text-decoration: underline;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
-      padding: 8px 0;
-    }
-
-    .contact-item i {
-      color: var(--primary-color);
-      min-width: 20px;
-      text-align: center;
-      font-size: 1rem;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.85rem;
-      margin-top: 10px;
-    }
-
-    .skill-tag {
-      background: var(--primary-color);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .skill-tag:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      border-top: 1px solid var(--border-color);
-      padding: 1.5rem 10px;
-      background: var(--card-bg);
-    }
-
-    .language-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-      z-index: 100;
-      transition: all 0.3s ease;
-    }
-
-    .language-toggle:hover {
-      transform: rotate(15deg) scale(1.1);
-    }
-
-    .language-toggle i {
-      font-size: 1.1rem;
-      color: var(--primary-color);
-    }
-
-    /* Print styles */
-    @media print {
-      .language-toggle {
-        display: none;
-      }
-      
-      .section-card {
-        box-shadow: none;
-        border: 1px solid #ddd;
-      }
-      
-      a {
-        color: #0D9488;
-      }
-    }
-
-    /* Responsive for small devices */
-    @media (max-width: 768px) {
-      body {
-        font-size: 14px;
-      }
-
-      header {
-        padding: 2.5rem 1rem;
-      }
-
-      .profile-image-container {
-        width: 180px;
-        height: 180px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1.1rem;
-      }
-
-      .container {
-        padding: 0 15px;
-      }
-
-      .section-card {
-        padding: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        font-size: 13px;
-      }
-
-      .profile-image-container {
-        width: 160px;
-        height: 160px;
-      }
-
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .section-card {
-        padding: 1.2rem;
-      }
-
-      h2 {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 
 <body>
@@ -396,7 +18,6 @@
   <header>
     <div class="profile-header">
       <div class="profile-image-container">
-        <!-- استبدل src بالمسار الصحيح لصورتك -->
         <img src="pictures/IMG_20250929_110535~4.jpg" alt="Abdelmageed Ahmed" class="profile-image" />
       </div>
       <div class="profile-text">
@@ -407,6 +28,7 @@
   </header>
 
   <div class="container">
+    <!-- الملف الشخصي -->
     <div class="section-card">
       <h2><i class="fas fa-user"></i> <span data-en="Profile" data-ar="الملف الشخصي">Profile</span></h2>
       <div class="section">
@@ -417,6 +39,7 @@
       </div>
     </div>
 
+    <!-- معلومات الاتصال -->
     <div class="section-card">
       <h2><i class="fas fa-address-book"></i> <span data-en="Contact & Links" data-ar="معلومات الاتصال والروابط">Contact & Links</span></h2>
       <div class="contact-grid">
@@ -427,6 +50,10 @@
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
           <span data-en="Khartoum State, Sudan" data-ar="ولاية الخرطوم، السودان">Khartoum State, Sudan</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span data-en="+249 99 123 4567" data-ar="+٢٤٩ ٩٩ ١٢٣ ٤٥٦٧">+249 99 123 4567</span>
         </div>
         <div class="contact-item">
           <i class="fab fa-linkedin"></i>
@@ -443,55 +70,199 @@
       </div>
     </div>
 
+    <!-- الخبرة العملية -->
     <div class="section-card">
       <h2><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-ar="الخبرة العملية">Work Experience</span></h2>
-      <div class="section">
-        <strong data-en="HSE Supervisor" data-ar="مشرف الصحة والسلامة والبيئة">HSE Supervisor</strong>
-        <p data-en="Red Rock Mining" data-ar="ريد روك للتعدين">Red Rock Mining</p>
-        <p class="muted" data-en="Nile River State, Sudan | June 2024 – Present" data-ar="ولاية نهر النيل، السودان | يونيو 2024 – حتى الآن">Nile River State, Sudan | June 2024 – Present</p>
-        <ul>
-          <li data-en="Conducted daily Toolbox Talks and thorough site safety inspections." data-ar="إجراء محادثات التحسيس الصباحي اليومية وتفتيشات السلامة الموقعية الشاملة.">Conducted daily Toolbox Talks and thorough site safety inspections.</li>
-          <li data-en="Ensured strict compliance with company policies and legal HSE requirements." data-ar="ضمان الامتثال الصارم لسياسات الشركة ومتطلبات الصحة والسلامة والبيئة القانونية.">Ensured strict compliance with company policies and legal HSE requirements.</li>
-          <li data-en="Led incident investigations and developed corrective actions." data-ar="قيادة تحقيقات الحوادث وتطوير إجراءات تصحيحية.">Led incident investigations and developed corrective actions.</li>
-          <li data-en="Supervised risk control measures and managed Permit-to-Work procedures." data-ar="الإشراف على إجراءات التحكم في المخاطر وإدارة إجراءات تصريح العمل.">Supervised risk control measures and managed Permit-to-Work procedures.</li>
-          <li data-en="Delivered safety training to site personnel." data-ar="تقديم تدريبات السلامة لموظفي الموقع.">Delivered safety training to site personnel.</li>
-          <li data-en="Monitored waste handling, maintaining environmental compliance." data-ar="مراقبة التعامل مع النفايات، والحفاظ على الامتثال البيئي.">Monitored waste handling, maintaining environmental compliance.</li>
-          <li data-en="Prepared monthly HSE reports and KPI analysis." data-ar="إعداد تقارير الصحة والسلامة والبيئة الشهرية وتحليل مؤشرات الأداء الرئيسية.">Prepared monthly HSE reports and KPI analysis.</li>
-        </ul>
+      
+      <!-- وظيفة 1 -->
+      <div class="work-item">
+        <div class="work-header">
+          <strong data-en="HSE Supervisor" data-ar="مشرف الصحة والسلامة والبيئة">HSE Supervisor</strong>
+          <span class="work-date" data-en="June 2024 – Present" data-ar="يونيو 2024 – حتى الآن">June 2024 – Present</span>
+        </div>
+        <p class="work-company" data-en="Red Rock Mining | Nile River State, Sudan" data-ar="ريد روك للتعدين | ولاية نهر النيل، السودان">Red Rock Mining | Nile River State, Sudan</p>
+        
+        <div class="work-details">
+          <h4 data-en="Key Responsibilities" data-ar="المسؤوليات الرئيسية">Key Responsibilities</h4>
+          <ul>
+            <li data-en="Conducted daily Toolbox Talks and thorough site safety inspections." data-ar="إجراء محادثات التحسيس الصباحي اليومية وتفتيشات السلامة الموقعية الشاملة.">Conducted daily Toolbox Talks and thorough site safety inspections.</li>
+            <li data-en="Ensured strict compliance with company policies and legal HSE requirements." data-ar="ضمان الامتثال الصارم لسياسات الشركة ومتطلبات الصحة والسلامة والبيئة القانونية.">Ensured strict compliance with company policies and legal HSE requirements.</li>
+            <li data-en="Led incident investigations and developed corrective actions." data-ar="قيادة تحقيقات الحوادث وتطوير إجراءات تصحيحية.">Led incident investigations and developed corrective actions.</li>
+            <li data-en="Supervised risk control measures and managed Permit-to-Work procedures." data-ar="الإشراف على إجراءات التحكم في المخاطر وإدارة إجراءات تصريح العمل.">Supervised risk control measures and managed Permit-to-Work procedures.</li>
+            <li data-en="Delivered safety training to site personnel." data-ar="تقديم تدريبات السلامة لموظفي الموقع.">Delivered safety training to site personnel.</li>
+          </ul>
+          
+          <h4 data-en="Key Achievements" data-ar="الإنجازات الرئيسية">Key Achievements</h4>
+          <ul>
+            <li data-en="Reduced workplace incidents by 30% within the first 6 months" data-ar="خفض الحوادث في مكان العمل بنسبة 30٪ خلال الأشهر الستة الأولى">Reduced workplace incidents by 30% within the first 6 months</li>
+            <li data-en="Implemented a new safety training program for 50+ employees" data-ar="تنفيذ برنامج تدريب سلامة جديد لأكثر من 50 موظف">Implemented a new safety training program for 50+ employees</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- وظيفة 2 -->
+      <div class="work-item">
+        <div class="work-header">
+          <strong data-en="HSE Assistant" data-ar="مساعد الصحة والسلامة والبيئة">HSE Assistant</strong>
+          <span class="work-date" data-en="January 2023 – May 2024" data-ar="يناير 2023 – مايو 2024">January 2023 – May 2024</span>
+        </div>
+        <p class="work-company" data-en="Sudan Mining Corporation | Khartoum, Sudan" data-ar="شركة التعدين السودانية | الخرطوم، السودان">Sudan Mining Corporation | Khartoum, Sudan</p>
+        
+        <div class="work-details">
+          <h4 data-en="Key Responsibilities" data-ar="المسؤوليات الرئيسية">Key Responsibilities</h4>
+          <ul>
+            <li data-en="Assisted in conducting risk assessments and safety audits" data-ar="المساعدة في إجراء تقييمات المخاطر وتدقيق السلامة">Assisted in conducting risk assessments and safety audits</li>
+            <li data-en="Maintained safety equipment and records" data-ar="صيانة معدات السلامة والسجلات">Maintained safety equipment and records</li>
+            <li data-en="Participated in emergency response drills" data-ar="المشاركة في تدريبات الاستجابة للطوارئ">Participated in emergency response drills</li>
+            <li data-en="Prepared weekly safety reports" data-ar="إعداد تقارير السلامة الأسبوعية">Prepared weekly safety reports</li>
+          </ul>
+          
+          <h4 data-en="Key Achievements" data-ar="الإنجازات الرئيسية">Key Achievements</h4>
+          <ul>
+            <li data-en="Developed a new documentation system for safety equipment" data-ar="تطوير نظام توثيق جديد لمعدات السلامة">Developed a new documentation system for safety equipment</li>
+            <li data-en="Recognized for outstanding support during safety audits" data-ar="التقدير على الدعم المتميز خلال تدقيقات السلامة">Recognized for outstanding support during safety audits</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- وظيفة 3 -->
+      <div class="work-item">
+        <div class="work-header">
+          <strong data-en="Safety Intern" data-ar="متدرب سلامة">Safety Intern</strong>
+          <span class="work-date" data-en="June 2022 – December 2022" data-ar="يونيو 2022 – ديسمبر 2022">June 2022 – December 2022</span>
+        </div>
+        <p class="work-company" data-en="National Mining Institute | Khartoum, Sudan" data-ar="المعهد الوطني للتعدين | الخرطوم، السودان">National Mining Institute | Khartoum, Sudan</p>
+        
+        <div class="work-details">
+          <h4 data-en="Key Responsibilities" data-ar="المسؤوليات الرئيسية">Key Responsibilities</h4>
+          <ul>
+            <li data-en="Supported senior safety officers in daily operations" data-ar="دعم ضباط السلامة الكبار في العمليات اليومية">Supported senior safety officers in daily operations</li>
+            <li data-en="Learned about mining safety regulations and procedures" data-ar="التعرف على لوائح وإجراءات السلامة في التعدين">Learned about mining safety regulations and procedures</li>
+            <li data-en="Assisted in preparing safety materials and presentations" data-ar="المساعدة في إعداد مواد وعروض السلامة">Assisted in preparing safety materials and presentations</li>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <!-- الكفاءات والمهارات -->
     <div class="section-card">
-      <h2><i class="fas fa-tools"></i> <span data-en="Core Competencies" data-ar="الكفاءات الأساسية">Core Competencies</span></h2>
-      <div class="skills-grid">
-        <span class="skill-tag" data-en="Risk Assessment" data-ar="تقييم المخاطر">Risk Assessment</span>
-        <span class="skill-tag" data-en="Incident Investigation" data-ar="تحقيق الحوادث">Incident Investigation</span>
-        <span class="skill-tag" data-en="Safety Audits" data-ar="تدقيق السلامة">Safety Audits</span>
-        <span class="skill-tag" data-en="Toolbox Talks" data-ar="التحسيس الصباحي">Toolbox Talks</span>
-        <span class="skill-tag" data-en="Permit-to-Work (PTW)" data-ar="تصريح العمل">Permit-to-Work (PTW)</span>
-        <span class="skill-tag" data-en="Environmental Management" data-ar="الإدارة البيئية">Environmental Management</span>
-        <span class="skill-tag" data-en="ISO 45001" data-ar="الأيزو 45001">ISO 45001</span>
-        <span class="skill-tag" data-en="ISO 14001" data-ar="الأيزو 14001">ISO 14001</span>
-        <span class="skill-tag" data-en="HSE Reporting" data-ar="تقارير الصحة والسلامة والبيئة">HSE Reporting</span>
+      <h2><i class="fas fa-tools"></i> <span data-en="Core Competencies & Skills" data-ar="الكفاءات والمهارات الأساسية">Core Competencies & Skills</span></h2>
+      
+      <div class="skills-category">
+        <h3 data-en="HSE & Safety Management" data-ar="إدارة الصحة والسلامة والبيئة">HSE & Safety Management</h3>
+        <div class="skills-grid">
+          <span class="skill-tag" data-en="Risk Assessment" data-ar="تقييم المخاطر">Risk Assessment</span>
+          <span class="skill-tag" data-en="Incident Investigation" data-ar="تحقيق الحوادث">Incident Investigation</span>
+          <span class="skill-tag" data-en="Safety Audits" data-ar="تدقيق السلامة">Safety Audits</span>
+          <span class="skill-tag" data-en="Toolbox Talks" data-ar="التحسيس الصباحي">Toolbox Talks</span>
+          <span class="skill-tag" data-en="Permit-to-Work (PTW)" data-ar="تصريح العمل">Permit-to-Work (PTW)</span>
+          <span class="skill-tag" data-en="Environmental Management" data-ar="الإدارة البيئية">Environmental Management</span>
+          <span class="skill-tag" data-en="Hazard Identification" data-ar="تحديد المخاطر">Hazard Identification</span>
+          <span class="skill-tag" data-en="Emergency Response" data-ar="الاستجابة للطوارئ">Emergency Response</span>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 data-en="Technical Skills" data-ar="المهارات التقنية">Technical Skills</h3>
+        <div class="skills-grid">
+          <span class="skill-tag" data-en="ISO 45001" data-ar="الأيزو 45001">ISO 45001</span>
+          <span class="skill-tag" data-en="ISO 14001" data-ar="الأيزو 14001">ISO 14001</span>
+          <span class="skill-tag" data-en="HSE Reporting" data-ar="تقارير الصحة والسلامة والبيئة">HSE Reporting</span>
+          <span class="skill-tag" data-en="KPI Monitoring" data-ar="مراقبة مؤشرات الأداء">KPI Monitoring</span>
+          <span class="skill-tag" data-en="Microsoft Office" data-ar="مايكروسوفت أوفيس">Microsoft Office</span>
+          <span class="skill-tag" data-en="Safety Software" data-ar="برامج السلامة">Safety Software</span>
+          <span class="skill-tag" data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</span>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</h3>
+        <div class="skills-grid">
+          <span class="skill-tag" data-en="Leadership" data-ar="القيادة">Leadership</span>
+          <span class="skill-tag" data-en="Communication" data-ar="التواصل">Communication</span>
+          <span class="skill-tag" data-en="Problem Solving" data-ar="حل المشكلات">Problem Solving</span>
+          <span class="skill-tag" data-en="Team Management" data-ar="إدارة الفريق">Team Management</span>
+          <span class="skill-tag" data-en="Training & Development" data-ar="التدريب والتطوير">Training & Development</span>
+          <span class="skill-tag" data-en="Attention to Detail" data-ar="الانتباه للتفاصيل">Attention to Detail</span>
+        </div>
       </div>
     </div>
 
+    <!-- التعليم -->
     <div class="section-card">
       <h2><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ar="التعليم">Education</span></h2>
-      <div class="section">
+      <div class="education-item">
         <strong data-en="Bachelor of Mechanical Engineering" data-ar="بكالوريوس في الهندسة الميكانيكية">Bachelor of Mechanical Engineering</strong>
         <p data-en="Omdurman Islamic University, Sudan" data-ar="جامعة أم درمان الإسلامية، السودان">Omdurman Islamic University, Sudan</p>
         <p class="muted" data-en="Expected Graduation: June 2026" data-ar="التخرج المتوقع: يونيو 2026">Expected Graduation: June 2026</p>
+        <div class="education-details">
+          <p data-en="Relevant Courses: Industrial Safety, Environmental Engineering, Project Management, Risk Analysis" data-ar="المقررات ذات الصلة: السلامة الصناعية، الهندسة البيئية، إدارة المشاريع، تحليل المخاطر">Relevant Courses: Industrial Safety, Environmental Engineering, Project Management, Risk Analysis</p>
+        </div>
       </div>
     </div>
 
+    <!-- الشهادات -->
     <div class="section-card">
       <h2><i class="fas fa-certificate"></i> <span data-en="Certifications & Training" data-ar="الشهادات والتدريب">Certifications & Training</span></h2>
-      <div class="section">
+      <div class="certifications-list">
+        <div class="cert-item">
+          <strong data-en="IOSH Managing Safely" data-ar="آيوش الإدارة بأمان">IOSH Managing Safely</strong>
+          <p class="muted" data-en="Institution of Occupational Safety and Health | 2023" data-ar="معهد السلامة والصحة المهنية | 2023">Institution of Occupational Safety and Health | 2023</p>
+        </div>
+        <div class="cert-item">
+          <strong data-en="First Aid & CPR Training" data-ar="تدريب الإسعافات الأولية والإنعاش القلبي الرئوي">First Aid & CPR Training</strong>
+          <p class="muted" data-en="Sudanese Red Crescent | 2023" data-ar="الهلال الأحمر السوداني | 2023">Sudanese Red Crescent | 2023</p>
+        </div>
+        <div class="cert-item">
+          <strong data-en="Firefighting & Fire Safety" data-ar="مكافحة الحرائق والسلامة من الحرائق">Firefighting & Fire Safety</strong>
+          <p class="muted" data-en="Civil Defense Department | 2023" data-ar="إدارة الدفاع المدني | 2023">Civil Defense Department | 2023</p>
+        </div>
+        <div class="cert-item">
+          <strong data-en="ISO 45001:2018 Internal Auditor" data-ar="مدقق داخلي للأيزو 45001:2018">ISO 45001:2018 Internal Auditor</strong>
+          <p class="muted" data-en="International Organization for Standardization | 2024" data-ar="المنظمة الدولية للمعايير | 2024">International Organization for Standardization | 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- اللغات -->
+    <div class="section-card">
+      <h2><i class="fas fa-language"></i> <span data-en="Languages" data-ar="اللغات">Languages</span></h2>
+      <div class="languages-list">
+        <div class="language-item">
+          <span data-en="Arabic" data-ar="العربية">Arabic</span>
+          <div class="language-level">
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+          </div>
+          <span class="language-proficiency" data-en="Native" data-ar="اللغة الأم">Native</span>
+        </div>
+        <div class="language-item">
+          <span data-en="English" data-ar="الإنجليزية">English</span>
+          <div class="language-level">
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+            <span class="level-dot full"></span>
+            <span class="level-dot"></span>
+            <span class="level-dot"></span>
+          </div>
+          <span class="language-proficiency" data-en="Professional Working Proficiency" data-ar="كفاءة مهنية">Professional Working Proficiency</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- المشاريع -->
+    <div class="section-card">
+      <h2><i class="fas fa-project-diagram"></i> <span data-en="Key Projects" data-ar="المشاريع الرئيسية">Key Projects</span></h2>
+      <div class="project-item">
+        <strong data-en="Mining Site Safety Improvement Initiative" data-ar="مبادرة تحسين سلامة موقع التعدين">Mining Site Safety Improvement Initiative</strong>
+        <p class="muted" data-en="Red Rock Mining | 2024" data-ar="ريد روك للتعدين | 2024">Red Rock Mining | 2024</p>
         <ul>
-          <li><strong data-en="IOSH Managing Safely" data-ar="آيوش الادارة بأمان ">IOSH Managing Safely</strong></li>
-          <li data-en="First Aid Training" data-ar="تدريب الإسعافات الأولية">First Aid Training</li>
-          <li data-en="Firefighting Training" data-ar="تدريب مكافحة الحرائق">Firefighting Training</li>
+          <li data-en="Led a team to redesign the site safety signage system" data-ar="قاد فريقًا لإعادة تصميم نظام لافتات السلامة في الموقع">Led a team to redesign the site safety signage system</li>
+          <li data-en="Developed new emergency evacuation procedures" data-ar="طور إجراءات جديدة لإخلاء الطوارئ">Developed new emergency evacuation procedures</li>
+          <li data-en="Resulted in 25% faster emergency response time" data-ar="نتج عنه وقت استجابة للطوارئ أسرع بنسبة 25٪">Resulted in 25% faster emergency response time</li>
         </ul>
       </div>
     </div>
@@ -501,47 +272,6 @@
     <span data-en="&copy; 2025 Abdelmageed Ahmed. All rights reserved." data-ar="&copy; 2025 عبد المجيد أحمد. جميع الحقوق محفوظة.">&copy; 2025 Abdelmageed Ahmed. All rights reserved.</span>
   </footer>
 
-  <script>
-    // Language toggle functionality
-    const languageToggle = document.getElementById('languageToggle');
-    const languageIcon = languageToggle.querySelector('i');
-    
-    // Check for saved language preference or default to English
-    const currentLanguage = localStorage.getItem('language') || 'en';
-    document.documentElement.lang = currentLanguage;
-    updateLanguage(currentLanguage);
-    
-    languageToggle.addEventListener('click', () => {
-      const currentLanguage = document.documentElement.lang;
-      const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-      
-      document.documentElement.lang = newLanguage;
-      localStorage.setItem('language', newLanguage);
-      updateLanguage(newLanguage);
-    });
-    
-    function updateLanguage(language) {
-      // Update all elements with data attributes
-      const elements = document.querySelectorAll('[data-en], [data-ar]');
-      elements.forEach(element => {
-        if (element.hasAttribute(`data-${language}`)) {
-          if (element.tagName === 'A') {
-            element.textContent = element.getAttribute(`data-${language}`);
-          } else {
-            element.innerHTML = element.getAttribute(`data-${language}`);
-          }
-        }
-      });
-      
-      // Update direction for Arabic
-      if (language === 'ar') {
-        document.body.style.direction = 'rtl';
-        document.body.style.textAlign = 'right';
-      } else {
-        document.body.style.direction = 'ltr';
-        document.body.style.textAlign = 'left';
-      }
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
   </html>
