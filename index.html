@@ -3,16 +3,574 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdelmageed Ahmed - HSE Supervisor | Mechanical Engineer</title>
+  <title>Abdelmageed Ahmed - HSE Supervisor | Mining Operations Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    :root {
+      --primary-color: #0D9488;
+      --primary-dark: #095c53;
+      --primary-light: #14B8A6;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --background: #FFFFFF;
+      --card-bg: #F9FAFB;
+      --border-color: #E5E7EB;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --gradient: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #14B8A6;
+      --primary-dark: #0D9488;
+      --primary-light: #2DD4BF;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --background: #0F172A;
+      --card-bg: #1E293B;
+      --border-color: #334155;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--gradient);
+      color: white;
+      padding: 2.5rem 1rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 1rem;
+    }
+
+    .profile-image-container {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .profile-image-container:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-text {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header .job-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.95;
+      margin-bottom: 0.5rem;
+    }
+
+    .location {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 1.2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .social-links i {
+      margin-right: 0.3rem;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 i {
+      font-size: 1.1rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .section strong {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin: 1rem 0 0.5rem 0;
+      display: block;
+    }
+
+    .job-type {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--primary-color);
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .company-info {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .date-location {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .muted {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.95rem;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      padding: 8px 0;
+    }
+
+    .contact-item i {
+      color: var(--primary-color);
+      min-width: 20px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .work-images {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 0.8rem;
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .thumbnail:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .education-link {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      display: inline-block;
+    }
+
+    .specialization {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.3rem;
+    }
+
+    .certification-item {
+      margin-bottom: 1rem;
+    }
+
+    .certification-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cert-link {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .issuer {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+    }
+
+    .languages-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .language-item {
+      background: rgba(13, 148, 136, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem 10px;
+      background: var(--card-bg);
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .language-toggle:hover {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .language-toggle i {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+
+    /* Print styles */
+    @media print {
+      .language-toggle {
+        display: none;
+      }
+      
+      .section-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      a {
+        color: #0D9488;
+      }
+    }
+
+    /* Responsive for small devices */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      header {
+        padding: 2rem 1rem 1rem;
+      }
+
+      .profile-image-container {
+        width: 150px;
+        height: 150px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header .job-title {
+        font-size: 1.1rem;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+
+      .section-card {
+        padding: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-links {
+        gap: 0.8rem;
+      }
+
+      .social-links a {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 13px;
+      }
+
+      .profile-image-container {
+        width: 130px;
+        height: 130px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header .job-title {
+        font-size: 1rem;
+      }
+
+      .social-links {
+        gap: 0.5rem;
+      }
+
+      .social-links a {
+        font-size: 0.75rem;
+      }
+
+      .section-card {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .thumbnail {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon"></i>
+  <div class="language-toggle" id="languageToggle">
+    <i class="fas fa-language"></i>
   </div>
 
   <header>
@@ -21,333 +579,237 @@
         <img src="pictures/IMG_20250929_110535~4.jpg" alt="Abdelmageed Ahmed" class="profile-image" />
       </div>
       <div class="profile-text">
-        <h1>Abdelmageed Ahmed Babiker</h1>
-        <p>HSE Supervisor | Mechanical Engineer | Mining Operations Specialist</p>
+        <h1 data-en="Abdelmageed Ahmed Babiker" data-ar="عبد المجيد أحمد بابكر">Abdelmageed Ahmed Babiker</h1>
+        <p class="job-title" data-en="HSE Supervisor | Mining Operations Specialist" data-ar="مشرف الصحة والسلامة والبيئة | أخصائي عمليات التعدين">HSE Supervisor | Mining Operations Specialist</p>
+        <p class="location" data-en="Khartoum, Sudan" data-ar="الخرطوم، السودان">Khartoum, Sudan</p>
+        <div class="social-links">
+          <a href="mailto:Abdelmageedahmedsco@gmail.com">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+          <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.facebook.com/Neezr" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
+  <div class="lightbox" id="lightbox">
+    <div class="close-lightbox" onclick="closeLightbox()">×</div>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
   <div class="container">
-    <!-- الملف الشخصي -->
     <div class="section-card">
-      <h2><i class="fas fa-user"></i> Profile</h2>
+      <h2><i class="fas fa-user"></i> <span data-en="Profile" data-ar="الملف الشخصي">Profile</span></h2>
       <div class="section">
-        <p>Highly motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards. Strong background in mechanical engineering with hands-on experience in maintenance and operations.</p>
+        <p data-en="Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards." 
+           data-ar="مشرف صحة وسلامة وبيئة متحمس ومركز على التفاصيل مع خبرة تزيد عن 1.5 سنة في عمليات التعدين. قدرة مثبتة على تنفيذ سياسات السلامة، وإجراء تقييمات صارمة للمخاطر، وتقديم محادثات صندوق الأدوات المؤثرة وضمان الامتثال الصارم لمعايير الصحة البيئية والمهنية.">
+          Motivated and detail-oriented HSE Supervisor with over 1.5 years of experience in mining operations. Proven ability to implement safety policies, conduct rigorous risk assessments, deliver impactful Toolbox Talks and ensure strict compliance with environmental and occupational health standards.
+        </p>
       </div>
     </div>
 
-    <!-- معلومات الاتصال -->
     <div class="section-card">
-      <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:Abdelmageedahmedsco@gmail.com">Abdelmageedahmedsco@gmail.com</a>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Khartoum State, Sudan</span>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <span>+249 99 123 4567</span>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-facebook"></i>
-          <a href="https://www.facebook.com/Neezr" target="_blank">Facebook Profile</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- الخبرة العملية -->
-    <div class="section-card">
-      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-ar="الخبرة العملية">Work Experience</span></h2>
       
-      <!-- HSE Supervisor - Red Rock Mining -->
-      <div class="work-item">
-        <div class="work-header">
-          <strong>HSE Supervisor</strong>
-          <span class="work-date">September 2024 – Present</span>
-        </div>
-        <p class="work-company">Red Rock Mining | Abu Hamad, River Nile State, Sudan</p>
-        <p class="work-website"><i class="fas fa-globe"></i> <a href="https://redrockmining.co/" target="_blank">redrockmining.co</a></p>
+      <div class="section">
+        <strong data-en="HSE Supervisor" data-ar="مشرف الصحة والسلامة والبيئة">HSE Supervisor</strong>
+        <span class="job-type" data-en="Full Time Job" data-ar="وظيفة بدوام كامل">Full Time Job</span>
+        <p class="company-info" data-en="Red Rock Mining" data-ar="ريد روك للتعدين">Red Rock Mining</p>
+        <p class="date-location" data-en="Nile River State, Sudan | June 2024 – Present" data-ar="ولاية نهر النيل، السودان | يونيو 2024 – حتى الآن">Nile River State, Sudan | June 2024 – Present</p>
+        <p data-en="Conducted daily Toolbox Talks and thorough site safety inspections. Ensured strict compliance with company policies and legal HSE requirements. Led incident investigations and developed corrective actions. Supervised risk control measures and managed Permit-to-Work procedures. Delivered safety training to site personnel. Monitored waste handling, maintaining environmental compliance. Prepared monthly HSE reports and KPI analysis." data-ar="إجراء محادثات صندوق الأدوات اليومية وتفتيشات السلامة الموقعية الشاملة. ضمان الامتثال الصارم لسياسات الشركة ومتطلبات الصحة والسلامة والبيئة القانونية. قيادة تحقيقات الحوادث وتطوير إجراءات تصحيحية. الإشراف على إجراءات التحكم في المخاطر وإدارة إجراءات تصريح العمل. تقديم تدريبات السلامة لموظفي الموقع. مراقبة التعامل مع النفايات، والحفاظ على الامتثال البيئي. إعداد تقارير الصحة والسلامة والبيئة الشهرية وتحليل مؤشرات الأداء الرئيسية.">
+          Conducted daily Toolbox Talks and thorough site safety inspections. Ensured strict compliance with company policies and legal HSE requirements. Led incident investigations and developed corrective actions. Supervised risk control measures and managed Permit-to-Work procedures. Delivered safety training to site personnel. Monitored waste handling, maintaining environmental compliance. Prepared monthly HSE reports and KPI analysis.
+        </p>
         
-        <div class="work-details">
-          <h4>Key Responsibilities</h4>
-          <ul>
-            <li>Conducting daily Toolbox Talks and thorough site safety inspections</li>
-            <li>Ensuring strict compliance with company policies and legal HSE requirements</li>
-            <li>Leading incident investigations and developing corrective actions</li>
-            <li>Supervising risk control measures and managing Permit-to-Work procedures</li>
-            <li>Delivering safety training to site personnel</li>
-          </ul>
-          
-          <h4>Key Skills Developed</h4>
-          <div class="skills-grid">
-            <span class="skill-tag">Risk Assessment & Hazard Identification</span>
-            <span class="skill-tag">Process Safety</span>
-            <span class="skill-tag">Incident Investigation & Root Cause Analysis</span>
-            <span class="skill-tag">Emergency Response Planning</span>
-            <span class="skill-tag">KPI Monitoring & Performance Analysis</span>
-            <span class="skill-tag">Inspection & Auditing</span>
-            <span class="skill-tag">Team Coordination & Training</span>
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">Reporting & Documentation</span>
-          </div>
-        </div>
-        
-        <!-- صور للوظيفة -->
         <div class="work-images">
-          <h4>Work Images</h4>
+          <p><em data-en="Work Images:" data-ar="صور العمل:">Work Images:</em></p>
           <div class="image-gallery">
-            <div class="pictures/IMG_20251016_200552.jpg">
-              <i class="fas fa-image"></i>
-              <span>pictures/IMG_20251016_200552.jpg</span>
+            <!-- استبدل هذه الصور بصورك الحقيقية -->
+            <div class="thumbnail" onclick="openLightbox('pictures/work1.jpg')">
+              <img src="pictures/work1.jpg" alt="Work Image 1">
             </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 2 - Team Training Session</span>
+            <div class="thumbnail" onclick="openLightbox('pictures/work2.jpg')">
+              <img src="pictures/work2.jpg" alt="Work Image 2">
             </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 3 - Emergency Drill</span>
+            <div class="thumbnail" onclick="openLightbox('pictures/work3.jpg')">
+              <img src="pictures/work3.jpg" alt="Work Image 3">
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Cashier - Alzytoona Shipping Center -->
-      <div class="work-item">
-        <div class="work-header">
-          <strong>Cashier</strong>
-          <span class="work-date">April 2021 – February 2022 & May 2022 – April 2023</span>
-        </div>
-        <p class="work-company">Alzytoona Shipping Center | Khartoum, Sudan</p>
-        <p class="work-website"><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/share/1AcazsFF2n/" target="_blank">Facebook Page</a></p>
+      <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+      
+      <div class="section">
+        <strong data-en="Mechanical Engineer Trainee" data-ar="مهندس ميكانيكي متدرب">Mechanical Engineer Trainee</strong>
+        <span class="job-type" data-en="Internship" data-ar="تدريب عملي">Internship</span>
+        <p class="company-info" data-en="To be specified" data-ar="سيتم تحديدها">To be specified</p>
+        <p class="date-location" data-en="Sudan | 2023" data-ar="السودان | 2023">Sudan | 2023</p>
+        <p data-en="Developed technical skills in mechanical systems and equipment maintenance. Learned about industrial safety procedures and quality control measures. Gained hands-on experience with machinery operations and troubleshooting." data-ar="تطوير المهارات التقنية في أنظمة الميكانيكا وصيانة المعدات. التعرف على إجراءات السلامة الصناعية وضوابط الجودة. اكتساب خبرة عملية في تشغيل الآلات وحل المشكلات.">
+          Developed technical skills in mechanical systems and equipment maintenance. Learned about industrial safety procedures and quality control measures. Gained hands-on experience with machinery operations and troubleshooting.
+        </p>
         
-        <div class="work-details">
-          <h4>Key Responsibilities</h4>
-          <ul>
-            <li>Processing customer transactions accurately and efficiently</li>
-            <li>Handling customer inquiries and resolving issues</li>
-            <li>Maintaining cash register and balancing daily transactions</li>
-            <li>Providing excellent customer service in a fast-paced environment</li>
-            <li>Assisting with inventory management and stock organization</li>
-          </ul>
-          
-          <h4>Key Skills Developed</h4>
-          <div class="skills-grid">
-            <span class="skill-tag">Customer Communication</span>
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Working Under Pressure</span>
-            <span class="skill-tag">Time & Task Management</span>
-            <span class="skill-tag">Attention to Detail</span>
-            <span class="skill-tag">Teamwork & Cooperation</span>
-            <span class="skill-tag">Reliability & Organization</span>
-          </div>
-        </div>
-        
-        <!-- صور للوظيفة -->
         <div class="work-images">
-          <h4>Work Images</h4>
+          <p><em data-en="Work Images:" data-ar="صور العمل:">Work Images:</em></p>
           <div class="image-gallery">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 1 - Customer Service</span>
+            <!-- استبدل هذه الصور بصورك الحقيقية -->
+            <div class="thumbnail" onclick="openLightbox('pictures/mech1.jpg')">
+              <img src="pictures/mech1.jpg" alt="Mechanical Work 1">
             </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 2 - Transaction Processing</span>
-            </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 3 - Team Collaboration</span>
+            <div class="thumbnail" onclick="openLightbox('pictures/mech2.jpg')">
+              <img src="pictures/mech2.jpg" alt="Mechanical Work 2">
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Mechanical Engineer Trainee - Albarajoub Company -->
-      <div class="work-item">
-        <div class="work-header">
-          <strong>Mechanical Engineer Trainee</strong>
-          <span class="work-date">March 2022 – April 2022</span>
+      <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+      
+      <div class="section">
+        <strong data-en="Cashier" data-ar="كاشير">Cashier</strong>
+        <span class="job-type" data-en="Part Time Job" data-ar="وظيفة بدوام جزئي">Part Time Job</span>
+        <p class="company-info" data-en="Retail Store" data-ar="متجر تجزئة">Retail Store</p>
+        <p class="date-location" data-en="Khartoum, Sudan | 2022 - 2023" data-ar="الخرطوم، السودان | 2022 - 2023">Khartoum, Sudan | 2022 - 2023</p>
+        <p data-en="Developed customer service skills and cash handling expertise. Learned inventory management and point of sale system operations. Improved communication skills and attention to detail in financial transactions." data-ar="تطوير مهارات خدمة العملاء وخبرة التعامل النقدي. تعلم إدارة المخزون وتشغيل أنظمة نقاط البيع. تحسين مهارات الاتصال والانتباه للتفاصيل في المعاملات المالية.">
+          Developed customer service skills and cash handling expertise. Learned inventory management and point of sale system operations. Improved communication skills and attention to detail in financial transactions.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ar="التعليم">Education</span></h2>
+      <div class="section">
+        <strong data-en="Bachelor of Mechanical Engineering" data-ar="بكالوريوس في الهندسة الميكانيكية">Bachelor of Mechanical Engineering</strong>
+        <p data-en="Omdurman Islamic University, Sudan" data-ar="جامعة أم درمان الإسلامية، السودان">Omdurman Islamic University, Sudan</p>
+        <p class="specialization" data-en="Specialization: Industrial Automation" data-ar="التخصص: الأتمتة الصناعية">Specialization: Industrial Automation</p>
+        <a href="https://oiu.edu.sd" target="_blank" class="education-link">oiu.edu.sd</a>
+        <p class="muted" data-en="Expected Graduation: June 2026" data-ar="التخرج المتوقع: يونيو 2026">Expected Graduation: June 2026</p>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><i class="fas fa-certificate"></i> <span data-en="Certifications & Training" data-ar="الشهادات والتدريب">Certifications & Training</span></h2>
+      <div class="section">
+        <div class="certification-item">
+          <strong data-en="IOSH Managing Safely" data-ar="إدارة السلامة من IOSH">IOSH Managing Safely</strong>
+          <p class="issuer" data-en="Institution of Occupational Safety and Health" data-ar="معهد الصحة والسلامة المهنية">Institution of Occupational Safety and Health</p>
+          <a href="#" class="cert-link" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a>
         </div>
-        <p class="work-company">Albarajoub Company Ltd | Khartoum, Sudan</p>
-        <p class="work-website"><i class="fas fa-globe"></i> <a href="https://albarajoub.com" target="_blank">albarajoub.com</a></p>
         
-        <div class="work-details">
-          <h4>Key Responsibilities</h4>
-          <ul>
-            <li>Assisted in corrective maintenance of mechanical equipment</li>
-            <li>Participated in preventive maintenance programs</li>
-            <li>Supported senior engineers in equipment troubleshooting</li>
-            <li>Documented maintenance activities and equipment performance</li>
-            <li>Learned about mechanical systems and maintenance best practices</li>
-          </ul>
-          
-          <h4>Key Skills Developed</h4>
-          <div class="skills-grid">
-            <span class="skill-tag">Corrective Maintenance</span>
-            <span class="skill-tag">Preventive Maintenance</span>
-            <span class="skill-tag">Equipment Troubleshooting</span>
-            <span class="skill-tag">Technical Documentation</span>
-            <span class="skill-tag">Mechanical Systems Understanding</span>
-          </div>
+        <div class="certification-item">
+          <strong data-en="First Aid Training" data-ar="تدريب الإسعافات الأولية">First Aid Training</strong>
+          <p class="issuer" data-en="Sudanese Red Crescent Society" data-ar="هلال السودان">Sudanese Red Crescent Society</p>
+          <a href="#" class="cert-link" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a>
         </div>
         
-        <!-- صور للوظيفة -->
-        <div class="work-images">
-          <h4>Work Images</h4>
-          <div class="image-gallery">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 1 - Equipment Maintenance</span>
-            </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 2 - Mechanical Systems</span>
-            </div>
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
-              <span>Image 3 - Engineering Team</span>
-            </div>
-          </div>
+        <div class="certification-item">
+          <strong data-en="Firefighting Training" data-ar="تدريب مكافحة الحرائق">Firefighting Training</strong>
+          <p class="issuer" data-en="Civil Defense Directorate" data-ar="مديرية الدفاع المدني">Civil Defense Directorate</p>
+          <a href="#" class="cert-link" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a>
         </div>
       </div>
     </div>
 
-    <!-- الكفاءات والمهارات -->
     <div class="section-card">
-      <h2><i class="fas fa-tools"></i> Core Competencies & Skills</h2>
-      
-      <div class="skills-category">
-        <h3>HSE & Safety Management</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">Risk Assessment & Hazard Identification</span>
-          <span class="skill-tag">Incident Investigation</span>
-          <span class="skill-tag">Safety Audits & Inspections</span>
-          <span class="skill-tag">Toolbox Talks & Safety Training</span>
-          <span class="skill-tag">Permit-to-Work (PTW) Systems</span>
-          <span class="skill-tag">Emergency Response Planning</span>
-          <span class="skill-tag">Process Safety Management</span>
-          <span class="skill-tag">KPI Monitoring & Reporting</span>
-          <span class="skill-tag">Team Leadership & Coordination</span>
-          <span class="skill-tag">Documentation & Compliance</span>
-        </div>
-      </div>
-      
-      <div class="skills-category">
-        <h3>Mechanical Engineering</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">Corrective Maintenance</span>
-          <span class="skill-tag">Preventive Maintenance</span>
-          <span class="skill-tag">Equipment Troubleshooting</span>
-          <span class="skill-tag">Technical Documentation</span>
-          <span class="skill-tag">Mechanical Systems Analysis</span>
-        </div>
-      </div>
-      
-      <div class="skills-category">
-        <h3>Customer Service & Operations</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">Customer Communication</span>
-          <span class="skill-tag">Problem Solving</span>
-          <span class="skill-tag">Working Under Pressure</span>
-          <span class="skill-tag">Time & Task Management</span>
-          <span class="skill-tag">Attention to Detail</span>
-          <span class="skill-tag">Teamwork & Cooperation</span>
-          <span class="skill-tag">Reliability & Organization</span>
-          <span class="skill-tag">Cash Handling</span>
-        </div>
-      </div>
-      
-      <div class="skills-category">
-        <h3>Technical & Software Skills</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">Microsoft Office Suite</span>
-          <span class="skill-tag">HSE Management Software</span>
-          <span class="skill-tag">Data Analysis</span>
-          <span class="skill-tag">Technical Reporting</span>
-          <span class="skill-tag">Documentation Systems</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- التعليم -->
-    <div class="section-card">
-      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-      <div class="education-item">
-        <strong>Bachelor of Mechanical Engineering</strong>
-        <p>Omdurman Islamic University, Sudan</p>
-        <p class="muted">Expected Graduation: June 2026</p>
-        <div class="education-details">
-          <p>Relevant Courses: Industrial Safety, Environmental Engineering, Project Management, Risk Analysis, Mechanical Maintenance, Fluid Mechanics, Thermodynamics</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- الشهادات -->
-    <div class="section-card">
-      <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
-      <div class="certifications-list">
-        <div class="cert-item">
-          <strong>IOSH Managing Safely</strong>
-          <p class="muted">Institution of Occupational Safety and Health | 2023</p>
-        </div>
-        <div class="cert-item">
-          <strong>First Aid & CPR Training</strong>
-          <p class="muted">Sudanese Red Crescent | 2023</p>
-        </div>
-        <div class="cert-item">
-          <strong>Firefighting & Fire Safety</strong>
-          <p class="muted">Civil Defense Department | 2023</p>
-        </div>
-        <div class="cert-item">
-          <strong>ISO 45001:2018 Internal Auditor</strong>
-          <p class="muted">International Organization for Standardization | 2024</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- اللغات -->
-    <div class="section-card">
-      <h2><i class="fas fa-language"></i> Languages</h2>
+      <h2><i class="fas fa-language"></i> <span data-en="Languages" data-ar="اللغات">Languages</span></h2>
       <div class="languages-list">
-        <div class="language-item">
-          <span>Arabic</span>
-          <div class="language-level">
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-          </div>
-          <span class="language-proficiency">Native</span>
-        </div>
-        <div class="language-item">
-          <span>English</span>
-          <div class="language-level">
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-            <span class="level-dot full"></span>
-            <span class="level-dot"></span>
-            <span class="level-dot"></span>
-          </div>
-          <span class="language-proficiency">Professional Working Proficiency</span>
-        </div>
+        <div class="language-item" data-en="Arabic: Native" data-ar="العربية: اللغة الأم">Arabic: Native</div>
+        <div class="language-item" data-en="English: Professional" data-ar="الإنجليزية: احترافية">English: Professional</div>
       </div>
     </div>
   </div>
 
   <footer>
-    <span>&copy; 2025 Abdelmageed Ahmed. All rights reserved.</span>
+    <span data-en="&copy; 2025 Abdelmageed Ahmed. All rights reserved." data-ar="&copy; 2025 عبد المجيد أحمد. جميع الحقوق محفوظة.">&copy; 2025 Abdelmageed Ahmed. All rights reserved.</span>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script>
+    // Language toggle functionality
+    const languageToggle = document.getElementById('languageToggle');
+    const languageIcon = languageToggle.querySelector('i');
+    
+    // Check for saved language preference or default to English
+    const currentLanguage = localStorage.getItem('language') || 'en';
+    document.documentElement.lang = currentLanguage;
+    updateLanguage(currentLanguage);
+    
+    languageToggle.addEventListener('click', () => {
+      const currentLanguage = document.documentElement.lang;
+      const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+      
+      document.documentElement.lang = newLanguage;
+      localStorage.setItem('language', newLanguage);
+      updateLanguage(newLanguage);
+    });
+    
+    function updateLanguage(language) {
+      // Update all elements with data attributes
+      const elements = document.querySelectorAll('[data-en], [data-ar]');
+      elements.forEach(element => {
+        if (element.hasAttribute(`data-${language}`)) {
+          if (element.tagName === 'A') {
+            element.textContent = element.getAttribute(`data-${language}`);
+          } else {
+            element.innerHTML = element.getAttribute(`data-${language}`);
+          }
+        }
+      });
+      
+      // Update direction for Arabic
+      if (language === 'ar') {
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
+      } else {
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'left';
+      }
+    }
+
+    // Lightbox functionality
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      
+      // Check if image exists, otherwise show placeholder
+      const img = new Image();
+      img.onload = function() {
+        lightboxImg.src = imageSrc;
+      };
+      img.onerror = function() {
+        lightboxImg.src = 'https://via.placeholder.com/800x600/0D9488/FFFFFF?text=Work+Image';
+        lightboxImg.alt = 'Placeholder - Replace with actual image';
+      };
+      img.src = imageSrc;
+      
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close lightbox when clicking outside the image
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
-              </html>
+                                                                                </html>
