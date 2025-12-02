@@ -1,26 +1,9 @@
-// Language toggle functionality
-const languageToggle = document.getElementById('languageToggle');
-const themeToggle = document.createElement('div');
-themeToggle.className = 'theme-toggle';
-themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-document.body.appendChild(themeToggle);
-
-// Check for saved language preference or default to English
-let currentLanguage = localStorage.getItem('language') || 'en';
-document.documentElement.lang = currentLanguage;
-updateLanguage(currentLanguage);
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
 
 // Check for saved theme preference
 let currentTheme = localStorage.getItem('theme') || 'light';
 updateTheme(currentTheme);
-
-languageToggle.addEventListener('click', () => {
-  const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-  currentLanguage = newLanguage;
-  document.documentElement.lang = newLanguage;
-  localStorage.setItem('language', newLanguage);
-  updateLanguage(newLanguage);
-});
 
 themeToggle.addEventListener('click', () => {
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -28,46 +11,6 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', newTheme);
   updateTheme(newTheme);
 });
-
-function updateLanguage(language) {
-  // Update all elements with data attributes
-  const elements = document.querySelectorAll('[data-en], [data-ar]');
-  elements.forEach(element => {
-    if (element.hasAttribute(`data-${language}`)) {
-      const text = element.getAttribute(`data-${language}`);
-      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-        element.placeholder = text;
-      } else if (element.tagName === 'A' || element.tagName === 'BUTTON' || element.tagName === 'SPAN') {
-        element.textContent = text;
-      } else {
-        element.innerHTML = text;
-      }
-    }
-  });
-  
-  // Update direction for Arabic
-  if (language === 'ar') {
-    document.body.style.direction = 'rtl';
-    document.body.style.textAlign = 'right';
-    // Adjust padding for RTL
-    document.querySelectorAll('ul li').forEach(li => {
-      li.style.paddingLeft = '0';
-      li.style.paddingRight = '1.5rem';
-    });
-    document.querySelectorAll('ul li::before').forEach(li => {
-      li.style.left = 'auto';
-      li.style.right = '0';
-    });
-  } else {
-    document.body.style.direction = 'ltr';
-    document.body.style.textAlign = 'left';
-    // Reset padding for LTR
-    document.querySelectorAll('ul li').forEach(li => {
-      li.style.paddingLeft = '1.5rem';
-      li.style.paddingRight = '0';
-    });
-  }
-}
 
 function updateTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
@@ -94,7 +37,19 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Initialize animations
+// Image placeholder click functionality
+function setupImagePlaceholders() {
+  const placeholders = document.querySelectorAll('.image-placeholder');
+  
+  placeholders.forEach(placeholder => {
+    placeholder.addEventListener('click', function() {
+      const imgText = this.querySelector('span').textContent;
+      alert(`You would upload an image for: ${imgText}\n\nIn the actual implementation, this would open a file upload dialog.`);
+    });
+  });
+}
+
+// Initialize animations and functionality
 document.addEventListener('DOMContentLoaded', () => {
   // Add initial styles for animation
   document.querySelectorAll('.section-card').forEach(card => {
@@ -114,4 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
     profileImage.style.opacity = '1';
     profileImage.style.transform = 'scale(1)';
   }, 300);
+  
+  // Setup image placeholders
+  setupImagePlaceholders();
+  
+  // Add click animation to skill tags
+  document.querySelectorAll('.skill-tag').forEach(tag => {
+    tag.addEventListener('click', function() {
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
 });
