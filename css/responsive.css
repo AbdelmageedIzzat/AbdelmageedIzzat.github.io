@@ -1,1 +1,89 @@
+/* Responsive for small devices */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 
+  header {
+    padding: 2.5rem 1rem;
+  }
+
+  .profile-image-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .section-card {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .language-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .profile-image-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .section-card {
+    padding: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  .language-toggle, .theme-toggle {
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .theme-toggle {
+    top: 65px;
+    right: 15px;
+  }
+}
