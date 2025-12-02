@@ -106,7 +106,7 @@
 
     .profile-image-container:hover {
       transform: scale(1.08);
-      box-shadow: 0 15px 30px pKgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
     .profile-image {
@@ -745,7 +745,7 @@
         <a href="https://www.facebook.com/share/1AcazsFF2n/">
           <i class="fas fa-external-link-alt"></i> Facebook Page
         </a>
-        <p class="date-location">Khartoum, Sudan | April 2021 - February 2022 | May 2022 - April 2023</pp
+        <p class="date-location">Khartoum, Sudan | April 2021 - February 2022 | May 2022 - April 2023</p>
         
         <ul>
           <li>Managing time and tasks efficiently</li>
@@ -872,26 +872,66 @@
       
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      
+      // إضافة إلى history لمنع الرجوع خارج الصفحة
+      history.pushState({ lightboxOpen: true }, '');
     }
 
-    function closeLightbox() {
+    function closeLightbox(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+      }
+      
       const lightbox = document.getElementById('lightbox');
       lightbox.classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // إزالة من history إذا كنا أضفناها
+      if (history.state && history.state.lightboxOpen) {
+        history.back();
+      }
+      
+      return false;
     }
 
     // Close lightbox when clicking outside the image
     document.getElementById('lightbox').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeLightbox();
+      if (e.target === this || e.target.classList.contains('close-lightbox')) {
+        closeLightbox(e);
       }
     });
 
     // Close lightbox with Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeLightbox();
+      const lightbox = document.getElementById('lightbox');
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeLightbox(e);
       }
+    });
+
+    // معالجة زر الرجوع في المتصفح
+    window.addEventListener('popstate', function(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.classList.contains('active')) {
+        closeLightbox(e);
+        
+        // إذا كان popstate جاء من lightbox، نعود مرة أخرى
+        if (history.state && history.state.lightboxOpen) {
+          history.back();
+        }
+      }
+    });
+
+    // منع فتح الصورة في صفحة جديدة عند النقر عليها في gallery
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+      thumb.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
     });
 
     // Add animation to section cards
@@ -907,6 +947,9 @@
           card.style.transform = 'translateY(0)';
         }, 100 + index * 100);
       });
+      
+      // إضافة history state أولي
+      history.replaceState({ page: 'main' }, '');
     });
   </script>
 </body>
