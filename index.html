@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -14,8 +14,8 @@
       --text-primary: #111827;
       --text-secondary: #6B7280;
       --background: #FFFFFF;
-      --card-bg: rgba(249, 250, 251, 0.95);
-      --border-color: #E5E7EB;
+      --card-bg: rgba(249, 250, 251, 0.92); /* زيادة الشفافية */
+      --border-color: rgba(229, 231, 235, 0.8); /* شفافية للأطر */
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -29,8 +29,8 @@
       --text-primary: #F9FAFB;
       --text-secondary: #D1D5DB;
       --background: #0F172A;
-      --card-bg: rgba(30, 41, 59, 0.95);
-      --border-color: #334155;
+      --card-bg: rgba(30, 41, 59, 0.92); /* شفافية للوضع الداكن */
+      --border-color: rgba(51, 65, 85, 0.8);
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
@@ -44,221 +44,36 @@
 
     body {
       font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                  url('pictures/code-5421210.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: var(--text-primary);
       line-height: 1.6;
       font-size: 15px;
       padding: 0;
       transition: background 0.3s, color 0.3s;
-      position: relative;
-      overflow-x: hidden;
-      background: var(--background);
+      min-height: 100vh;
     }
 
-    /* الخلفية المتحركة */
-    .automation-background {
+    /* إذا فشل تحميل الخلفية */
+    body:before {
+      content: '';
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
       z-index: -2;
-      overflow: hidden;
-      background: 
-        linear-gradient(45deg, 
-          rgba(13, 148, 136, 0.03) 0%, 
-          rgba(20, 184, 166, 0.05) 25%, 
-          rgba(45, 212, 191, 0.03) 50%, 
-          rgba(13, 148, 136, 0.05) 75%, 
-          rgba(20, 184, 166, 0.03) 100%
-        );
-    }
-
-    /* دوائر إلكترونية متحركة */
-    .circuit-circle {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-      opacity: 0.1;
-      animation: float 20s infinite linear;
-    }
-
-    .circuit-circle:nth-child(1) {
-      width: 300px;
-      height: 300px;
-      top: -150px;
-      left: -150px;
-      animation-delay: 0s;
-    }
-
-    .circuit-circle:nth-child(2) {
-      width: 200px;
-      height: 200px;
-      bottom: -100px;
-      right: 10%;
-      animation-delay: 5s;
-      animation-direction: reverse;
-    }
-
-    .circuit-circle:nth-child(3) {
-      width: 150px;
-      height: 150px;
-      top: 30%;
-      right: -75px;
-      animation-delay: 10s;
-    }
-
-    /* خطوط الدوائر الإلكترونية */
-    .circuit-line {
-      position: absolute;
-      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-      opacity: 0.08;
-      height: 2px;
-      animation: scan 4s infinite linear;
-    }
-
-    .circuit-line:nth-child(4) {
-      width: 80%;
-      top: 20%;
-      left: -80%;
-      animation-delay: 0s;
-    }
-
-    .circuit-line:nth-child(5) {
-      width: 60%;
-      top: 60%;
-      right: -60%;
-      animation-delay: 1s;
-    }
-
-    .circuit-line:nth-child(6) {
-      width: 70%;
-      bottom: 30%;
-      left: -70%;
-      animation-delay: 2s;
-    }
-
-    /* نقاط بيانات متحركة */
-    .data-point {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background-color: var(--primary-light);
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: blink 3s infinite;
-    }
-
-    /* خطوط اتصال */
-    .connection-line {
-      position: absolute;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-      opacity: 0.1;
-      animation: pulse 6s infinite;
-    }
-
-    /* أنماط هندسية */
-    .geometric-pattern {
-      position: absolute;
-      opacity: 0.05;
-      border: 2px solid var(--primary-color);
-      animation: rotate 40s infinite linear;
-    }
-
-    .geometric-pattern:nth-child(10) {
-      width: 100px;
-      height: 100px;
-      top: 15%;
-      left: 15%;
-      border-radius: 20% 80% 70% 30% / 30% 30% 70% 70%;
-    }
-
-    .geometric-pattern:nth-child(11) {
-      width: 150px;
-      height: 150px;
-      bottom: 20%;
-      right: 20%;
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-
-    /* أنيمشنات */
-    @keyframes float {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      25% {
-        transform: translate(20px, 20px) rotate(90deg);
-      }
-      50% {
-        transform: translate(0, 40px) rotate(180deg);
-      }
-      75% {
-        transform: translate(-20px, 20px) rotate(270deg);
-      }
-      100% {
-        transform: translate(0, 0) rotate(360deg);
-      }
-    }
-
-    @keyframes scan {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(100vw);
-      }
-    }
-
-    @keyframes blink {
-      0%, 100% {
-        opacity: 0.2;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(1.5);
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.05;
-        width: 100px;
-      }
-      50% {
-        opacity: 0.2;
-        width: 200px;
-      }
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* تأثيرات للوضع الداكن */
-    [data-theme="dark"] .circuit-circle {
-      opacity: 0.15;
-    }
-
-    [data-theme="dark"] .circuit-line {
-      opacity: 0.12;
-    }
-
-    [data-theme="dark"] .data-point {
-      opacity: 0.6;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
     }
 
     header {
@@ -269,7 +84,6 @@
       margin-bottom: 1.5rem;
       position: relative;
       overflow: hidden;
-      z-index: 2;
     }
 
     header::before {
@@ -372,7 +186,7 @@
 
     .section-card {
       background: var(--card-bg);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px); /* تأثير ضبابي خلفي */
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.2rem;
@@ -677,9 +491,7 @@
       border-top: 1px solid var(--border-color);
       padding: 1.5rem 10px;
       background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      position: relative;
-      z-index: 1;
+      backdrop-filter: blur(8px);
     }
 
     .theme-toggle {
@@ -687,7 +499,7 @@
       top: 20px;
       right: 20px;
       background: var(--card-bg);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--border-color);
       border-radius: 50%;
       width: 45px;
@@ -712,18 +524,22 @@
 
     /* Print styles */
     @media print {
-      .theme-toggle, .automation-background {
+      .theme-toggle {
         display: none;
       }
       
       .section-card {
         box-shadow: none;
         border: 1px solid #ddd;
-        backdrop-filter: none;
+        background: white !important;
       }
       
       a {
         color: #0D9488;
+      }
+      
+      body {
+        background: white !important;
       }
     }
 
@@ -731,6 +547,7 @@
     @media (max-width: 768px) {
       body {
         font-size: 14px;
+        background-attachment: scroll; /* إلغاء التثبيت للهواتف */
       }
 
       header {
@@ -756,6 +573,7 @@
 
       .section-card {
         padding: 1.2rem;
+        backdrop-filter: blur(5px); /* تقليل التأثير الضبابي للهواتف */
       }
 
       h2 {
@@ -778,9 +596,9 @@
         width: 100px;
         height: 100px;
       }
-
-      .circuit-circle {
-        display: none;
+      
+      footer {
+        backdrop-filter: blur(5px);
       }
     }
 
@@ -829,55 +647,11 @@
         top: 15px;
         right: 15px;
       }
-
-      .automation-background {
-        opacity: 0.5;
-      }
     }
   </style>
 </head>
 
 <body>
-  <!-- الخلفية المتحركة للأتمتة الصناعية -->
-  <div class="automation-background">
-    <div class="circuit-circle"></div>
-    <div class="circuit-circle"></div>
-    <div class="circuit-circle"></div>
-    <div class="circuit-line"></div>
-    <div class="circuit-line"></div>
-    <div class="circuit-line"></div>
-    <div class="geometric-pattern"></div>
-    <div class="geometric-pattern"></div>
-    
-    <!-- نقاط بيانات عشوائية -->
-    <script>
-      // إنشاء نقاط بيانات عشوائية
-      document.addEventListener('DOMContentLoaded', function() {
-        const background = document.querySelector('.automation-background');
-        
-        for (let i = 0; i < 15; i++) {
-          const dataPoint = document.createElement('div');
-          dataPoint.className = 'data-point';
-          dataPoint.style.left = `${Math.random() * 100}%`;
-          dataPoint.style.top = `${Math.random() * 100}%`;
-          dataPoint.style.animationDelay = `${Math.random() * 5}s`;
-          background.appendChild(dataPoint);
-        }
-        
-        // خطوط اتصال
-        for (let i = 0; i < 8; i++) {
-          const connectionLine = document.createElement('div');
-          connectionLine.className = 'connection-line';
-          connectionLine.style.left = `${Math.random() * 80}%`;
-          connectionLine.style.top = `${Math.random() * 80 + 10}%`;
-          connectionLine.style.transform = `rotate(${Math.random() * 180}deg)`;
-          connectionLine.style.animationDelay = `${Math.random() * 6}s`;
-          background.appendChild(connectionLine);
-        }
-      });
-    </script>
-  </div>
-
   <div class="theme-toggle" id="themeToggle">
     <i class="fas fa-moon"></i>
   </div>
@@ -1208,31 +982,7 @@
       
       // إضافة history state أولي
       history.replaceState({ page: 'main' }, '');
-      
-      // إضافة تأثيرات حركية إضافية
-      createDynamicElements();
     });
-
-    // إنشاء عناصر ديناميكية للخلفية
-    function createDynamicElements() {
-      const background = document.querySelector('.automation-background');
-      
-      // إضافة المزيد من العناصر الديناميكية
-      for (let i = 0; i < 5; i++) {
-        const binaryCode = document.createElement('div');
-        binaryCode.className = 'binary-code';
-        binaryCode.textContent = Math.random() > 0.5 ? '1' : '0';
-        binaryCode.style.position = 'absolute';
-        binaryCode.style.left = `${Math.random() * 90 + 5}%`;
-        binaryCode.style.top = `${Math.random() * 90 + 5}%`;
-        binaryCode.style.color = 'var(--primary-color)';
-        binaryCode.style.opacity = '0.15';
-        binaryCode.style.fontSize = '14px';
-        binaryCode.style.fontFamily = 'monospace';
-        binaryCode.style.animation = `blink ${2 + Math.random() * 3}s infinite`;
-        background.appendChild(binaryCode);
-      }
-    }
   </script>
 </body>
-  </html>
+            </html>
