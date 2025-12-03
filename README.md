@@ -1,2 +1,4 @@
 # AbdelmageedIzzat.github.io
-personal plug 
+personal plug
+ خير ان شاءالله 
+ بتفتش في شنو !!
