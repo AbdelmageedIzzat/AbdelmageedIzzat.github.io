@@ -1371,12 +1371,17 @@
       });
     });
 
-    // Lightbox functionality - إصلاح مشكلة زر الرجوع
+    // Lightbox functionality - بدون مشاكل زر الرجوع
     let lightboxOpen = false;
-    
+
     function openLightbox(imageSrc) {
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
+      
+      // إضافة history state مرة واحدة فقط
+      if (!lightboxOpen) {
+        history.pushState({ lightbox: true }, '');
+      }
       
       // Check if image exists, otherwise show placeholder
       const img = new Image();
@@ -1393,9 +1398,6 @@
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
       lightboxOpen = true;
-      
-      // منع إضافة حالة جديدة إلى الـ history
-      // سنستخدم فقط event listeners للتحكم بالإغلاق
     }
 
     function closeLightbox(e) {
@@ -1408,6 +1410,11 @@
       lightbox.classList.remove('active');
       document.body.style.overflow = 'auto';
       lightboxOpen = false;
+      
+      // إرجاع history إلى الحالة السابقة
+      if (history.state && history.state.lightbox) {
+        history.back();
+      }
       
       return false;
     }
@@ -1431,13 +1438,13 @@
     window.addEventListener('popstate', function(e) {
       const lightbox = document.getElementById('lightbox');
       if (lightboxOpen && lightbox.classList.contains('active')) {
-        closeLightbox(e);
-        // منع السلوك الافتراضي للرجوع
-        history.pushState(null, null, window.location.pathname);
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        lightboxOpen = false;
       }
     });
 
-    // تهيئة history state لمنع مشاكل زر الرجوع
+    // تهيئة history state
     history.replaceState({page: 'main'}, '');
 
     // منع النقر الافتراضي على الصور المصغرة
@@ -1499,4 +1506,4 @@
     });
   </script>
 </body>
-              </html>
+  </html>
