@@ -53,25 +53,27 @@
       background: var(--background);
       color: var(--text-primary);
       line-height: 1.6;
-      font-size: 14px; /* تقليل حجم الخط العام */
+      font-size: 14px;
       padding: 0;
       transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 25px;
     }
 
     header {
       background: var(--gradient);
       color: white;
-      padding: 2.5rem 1rem 1.5rem;
+      padding: 3.5rem 1.5rem 2rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       position: relative;
       overflow: hidden;
+      border-radius: 0 0 20px 20px;
     }
 
     header::before {
@@ -87,32 +89,35 @@
 
     .profile-header {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      justify-content: center;
+      gap: 3rem;
       position: relative;
       z-index: 2;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .profile-image-container {
-      width: 180px;
-      height: 180px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      background-color: rgba(255, 255, 255, 0.1);
+      border: 6px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background-color: rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      position: relative;
+      flex-shrink: 0;
     }
 
     .profile-image-container:hover {
       transform: scale(1.08);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border-color: rgba(255, 255, 255, 0.7);
     }
 
     .profile-image {
@@ -120,165 +125,217 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-image-container:hover .profile-image {
+      transform: scale(1.05);
     }
 
     .profile-text {
-      text-align: center;
-      max-width: 700px;
+      text-align: left;
+      max-width: 600px;
+      flex: 1;
+      min-width: 300px;
     }
 
     header h1 {
-      font-size: 2rem; /* تقليل حجم العنوان */
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      letter-spacing: -0.5px;
     }
 
     header .job-title {
-      font-size: 1.1rem; /* تقليل حجم الوظيفة */
+      font-size: 1.4rem;
       font-weight: 500;
       opacity: 0.95;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      background: rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
     }
 
     .location {
-      font-size: 0.85rem; /* تقليل حجم الموقع */
-      opacity: 0.85;
-      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .location i {
+      font-size: 1.1rem;
     }
 
     .social-links {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
     }
 
     .social-links a {
       color: white;
-      font-size: 0.8rem; /* تقليل حجم روابط التواصل */
+      font-size: 0.9rem;
       opacity: 0.9;
-      transition: opacity 0.3s;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       text-decoration: none;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      transition: all 0.3s;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .social-links a:hover {
       opacity: 1;
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-    }
-
-    .social-links i {
-      margin-right: 0.3rem;
-      font-size: 0.8rem; /* تقليل حجم الأيقونات */
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .section-card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.2rem;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .section-card:hover::before {
+      opacity: 1;
     }
 
     .section-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
     }
 
     h2 {
-      font-size: 1.2rem; /* تقليل حجم العناوين الفرعية */
+      font-size: 1.4rem;
       color: var(--primary-color);
-      margin-bottom: 1.2rem;
-      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--border-color);
     }
 
     h2 i {
-      font-size: 1rem; /* تقليل حجم أيقونات العناوين */
-      width: 20px;
+      font-size: 1.2rem;
+      width: 24px;
       text-align: center;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section {
+      position: relative;
     }
 
     .section p {
-      font-size: 0.9rem; /* تقليل حجم النصوص */
+      font-size: 0.95rem;
       margin-bottom: 1rem;
+      line-height: 1.7;
     }
 
     .section strong {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-primary);
-      font-size: 0.95rem; /* تقليل حجم العناوين داخل الأقسام */
-      margin: 1rem 0 0.5rem 0;
-      display: block;
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.8rem 0;
+      display: inline-block;
+      position: relative;
+    }
+
+    .section strong:first-of-type {
+      margin-top: 0;
     }
 
     .job-type {
       display: inline-block;
-      background: rgba(191, 74, 168, 0.1);
+      background: linear-gradient(135deg, rgba(191, 74, 168, 0.15), rgba(81, 208, 222, 0.15));
       color: var(--primary-color);
-      padding: 0.2rem 0.7rem;
+      padding: 0.3rem 0.9rem;
       border-radius: 20px;
-      font-size: 0.75rem; /* تقليل حجم التنسيق */
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-left: 0.5rem;
+      margin-left: 0.8rem;
       vertical-align: middle;
-    }
-
-    /* إضافة مسافة بين العنوان والتنسيق */
-    .section strong + .job-type {
-      margin-left: 8px;
-      margin-top: 0;
+      border: 1px solid rgba(191, 74, 168, 0.2);
     }
 
     .company-info {
       color: var(--text-secondary);
-      font-size: 0.9rem; /* تقليل حجم معلومات الشركة */
-      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
 
     .company-link {
-      display: inline-block;
-      font-size: 0.85rem; /* تقليل حجم رابط الشركة */
-      margin-bottom: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
       color: var(--primary-color);
-      background: rgba(191, 74, 168, 0.05);
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
+      background: rgba(191, 74, 168, 0.08);
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
       transition: all 0.3s;
+      text-decoration: none;
     }
 
     .company-link:hover {
-      background: rgba(191, 74, 168, 0.1);
-      transform: translateX(3px);
-    }
-
-    .company-link i {
-      margin-right: 0.3rem;
-      font-size: 0.8rem; /* تقليل حجم أيقونة الرابط */
+      background: rgba(191, 74, 168, 0.15);
+      transform: translateX(5px);
+      text-decoration: none;
     }
 
     .date-location {
       color: var(--text-secondary);
-      font-size: 0.8rem; /* تقليل حجم التاريخ والموقع */
-      font-style: italic;
-      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .date-location i {
+      font-size: 0.9rem;
     }
 
     .muted {
       color: var(--text-secondary);
-      font-size: 0.8rem; /* تقليل حجم النص الخافت */
+      font-size: 0.85rem;
       margin-bottom: 1rem;
       font-style: italic;
     }
@@ -286,14 +343,14 @@
     ul {
       list-style: none;
       padding-left: 0;
-      font-size: 0.9rem; /* تقليل حجم النقاط */
+      font-size: 0.95rem;
     }
 
     ul li {
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.6;
+      padding-left: 1.8rem;
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
     }
 
     ul li::before {
@@ -302,7 +359,7 @@
       left: 0;
       color: var(--primary-color);
       font-weight: bold;
-      font-size: 1rem; /* تقليل حجم السهم */
+      font-size: 1.2rem;
       line-height: 1;
     }
 
@@ -320,52 +377,71 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.9rem; /* تقليل حجم معلومات الاتصال */
-      padding: 8px 0;
+      gap: 15px;
+      font-size: 0.95rem;
+      padding: 10px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(5px);
     }
 
     .contact-item i {
       color: var(--primary-color);
-      min-width: 18px; /* تقليل عرض الأيقونات */
+      min-width: 22px;
       text-align: center;
-      font-size: 0.9rem; /* تقليل حجم أيقونات الاتصال */
+      font-size: 1.1rem;
+      background: rgba(191, 74, 168, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .work-images {
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px dashed var(--border-color);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed var(--border-color);
+    }
+
+    .work-images p {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
     .image-gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 0.8rem;
+      gap: 15px;
+      margin-top: 1rem;
     }
 
     .thumbnail {
-      width: 120px;
-      height: 120px;
-      border-radius: 8px;
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
       overflow: hidden;
       cursor: pointer;
-      border: 2px solid var(--border-color);
-      transition: all 0.3s ease;
+      border: 3px solid var(--border-color);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
+      flex-shrink: 0;
     }
 
     .thumbnail:hover {
       border-color: var(--primary-color);
-      transform: scale(1.05);
+      transform: scale(1.08) rotate(2deg);
       box-shadow: var(--shadow-lg);
     }
 
@@ -374,6 +450,45 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .thumbnail:hover img {
+      transform: scale(1.1);
+    }
+
+    .thumbnail::after {
+      content: '🔍';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .thumbnail:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .thumbnail::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .thumbnail:hover::before {
+      opacity: 1;
     }
 
     .image-placeholder {
@@ -385,14 +500,14 @@
       align-items: center;
       justify-content: center;
       color: var(--text-secondary);
-      font-size: 0.75rem; /* تقليل حجم النص البديل */
+      font-size: 0.8rem;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
     }
 
     .image-placeholder i {
-      font-size: 1.3rem; /* تقليل حجم أيقونة الصورة البديلة */
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
       color: var(--primary-color);
     }
 
@@ -403,77 +518,138 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
       justify-content: center;
       align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 20px;
     }
 
     .lightbox.active {
       display: flex;
+      opacity: 1;
     }
 
     .lightbox-content {
       max-width: 90%;
       max-height: 90%;
+      position: relative;
+      animation: lightboxZoom 0.3s ease-out;
+    }
+
+    @keyframes lightboxZoom {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .lightbox-content img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      display: block;
     }
 
     .close-lightbox {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 25px;
+      right: 25px;
       color: white;
-      font-size: 1.8rem; /* تقليل حجم أيقونة الإغلاق */
+      font-size: 2.5rem;
       cursor: pointer;
-      background: rgba(0, 0, 0, 0.5);
-      width: 36px;
-      height: 36px;
+      background: rgba(0, 0, 0, 0.6);
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      z-index: 2001;
     }
 
     .close-lightbox:hover {
       background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2001;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-nav.prev {
+      left: 25px;
+    }
+
+    .lightbox-nav.next {
+      right: 25px;
     }
 
     .education-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       color: var(--primary-color);
-      font-size: 0.85rem; /* تقليل حجم رابط التعليم */
-      margin-top: 0.3rem;
-      display: inline-block;
-      background: rgba(191, 74, 168, 0.05);
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      background: rgba(191, 74, 168, 0.08);
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
       transition: all 0.3s;
     }
 
     .education-link:hover {
-      background: rgba(191, 74, 168, 0.1);
-      transform: translateX(3px);
+      background: rgba(191, 74, 168, 0.15);
+      transform: translateX(5px);
+      text-decoration: none;
     }
 
     .specialization {
-      font-size: 0.85rem; /* تقليل حجم التخصص */
+      font-size: 0.9rem;
       color: var(--text-secondary);
-      margin-top: 0.3rem;
+      margin-top: 0.5rem;
+      font-weight: 500;
     }
 
     .certification-item {
-      margin-bottom: 1.5rem; /* تقليل المسافة بين الشهادات */
-      padding-bottom: 1.5rem;
-      padding-left: 12px; /* إضافة مسافة من اليسار */
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.8rem;
+      padding-left: 20px;
       border-bottom: 1px solid var(--border-color);
       position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .certification-item:hover {
+      transform: translateX(5px);
     }
 
     .certification-item:last-child {
@@ -487,172 +663,302 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 4px;
+      width: 5px;
       height: 100%;
       background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
-    /* إضافة مسافة بين اسم الشهادة والتنسيق في قسم الشهادات */
     .certification-item strong {
-      display: inline-block;
-      margin-right: 8px; /* إضافة مسافة بين النص والتنسيق */
+      display: block;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
     }
 
     .cert-link {
-      font-size: 0.85rem; /* تقليل حجم رابط الشهادة */
-      margin-top: 0.5rem;
-      display: inline-block;
-      background: rgba(81, 208, 222, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      background: rgba(81, 208, 222, 0.12);
       color: var(--secondary-dark);
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
       transition: all 0.3s;
     }
 
     .cert-link:hover {
       background: rgba(81, 208, 222, 0.2);
-      transform: translateX(3px);
-    }
-
-    .cert-link i {
-      margin-right: 0.3rem;
-      font-size: 0.8rem; /* تقليل حجم أيقونة رابط الشهادة */
+      transform: translateX(5px);
+      text-decoration: none;
     }
 
     .issuer {
-      font-size: 0.8rem; /* تقليل حجم الجهة المانحة */
+      font-size: 0.85rem;
       color: var(--text-secondary);
-      margin-top: 0.2rem;
-      padding-left: 0;
+      margin-top: 0.3rem;
+      line-height: 1.5;
     }
 
     .languages-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem; /* تقليل المسافة بين اللغات */
+      gap: 1rem;
     }
 
     .language-item {
-      background: rgba(81, 208, 222, 0.15);
+      background: linear-gradient(135deg, rgba(81, 208, 222, 0.2), rgba(191, 74, 168, 0.2));
       color: var(--secondary-dark);
-      padding: 0.4rem 0.8rem; /* تقليل padding للغات */
-      border-radius: 20px;
-      font-size: 0.85rem; /* تقليل حجم نص اللغات */
-      font-weight: 500;
-      transition: all 0.3s;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(81, 208, 222, 0.3);
     }
 
     .language-item:hover {
-      background: rgba(81, 208, 222, 0.25);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(81, 208, 222, 0.3), rgba(191, 74, 168, 0.3));
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
-      font-size: 0.8rem; /* تقليل حجم النص في الفوتر */
+      margin-top: 4rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
       border-top: 1px solid var(--border-color);
-      padding: 1.5rem 10px;
+      padding: 2rem 10px;
       background: rgba(81, 208, 222, 0.05);
+      border-radius: 20px 20px 0 0;
     }
 
     .theme-toggle {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 25px;
+      right: 25px;
       background: var(--primary-color);
-      border: 1px solid var(--border-color);
+      border: 2px solid var(--border-color);
       border-radius: 50%;
-      width: 45px;
-      height: 45px;
+      width: 55px;
+      height: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: var(--shadow-md);
-      z-index: 100;
-      transition: all 0.3s ease;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .theme-toggle:hover {
-      transform: rotate(15deg) scale(1.1);
+      transform: rotate(15deg) scale(1.15);
       background: var(--primary-dark);
+      box-shadow: 0 0 20px rgba(191, 74, 168, 0.5);
     }
 
     .theme-toggle i {
-      font-size: 1rem; /* تقليل حجم أيقونة الثيم */
+      font-size: 1.2rem;
       color: white;
+      transition: transform 0.4s ease;
     }
 
-    /* Print styles */
+    .theme-toggle:hover i {
+      transform: rotate(10deg);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--gradient);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: var(--secondary-color);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .print-btn:hover {
+      background: var(--secondary-dark);
+      transform: translateY(-5px);
+    }
+
+    /* تحسينات الطباعة */
     @media print {
-      .theme-toggle {
+      .theme-toggle,
+      .back-to-top,
+      .print-btn {
         display: none;
       }
       
       .section-card {
         box-shadow: none;
         border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+      
+      header {
+        background: linear-gradient(135deg, #BF4AA8 0%, #51D0DE 100%);
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
       }
       
       a {
         color: #BF4AA8;
+        text-decoration: none;
+      }
+      
+      .social-links a {
+        background: none;
+        color: white;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
       }
     }
 
-    /* Responsive for small devices */
+    /* تحسينات للهواتف المحمولة */
     @media (max-width: 768px) {
-      body {
-        font-size: 14px;
+      .container {
+        padding: 0 20px;
+        max-width: 100%;
       }
 
       header {
-        padding: 2rem 1rem 1rem;
+        padding: 2.5rem 1rem 1.5rem;
+        border-radius: 0 0 15px 15px;
+      }
+
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .profile-text {
+        text-align: center;
+        min-width: auto;
       }
 
       .profile-image-container {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
       }
 
       header h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
       }
 
       header .job-title {
-        font-size: 1rem;
-      }
-
-      .container {
-        padding: 0 15px;
+        font-size: 1.2rem;
       }
 
       .section-card {
-        padding: 1.2rem;
+        padding: 1.5rem;
       }
 
       h2 {
-        font-size: 1.1rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
+        font-size: 1.3rem;
       }
 
       .social-links {
-        gap: 0.8rem;
+        justify-content: center;
       }
 
       .social-links a {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.9rem;
       }
       
       .thumbnail {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+      }
+      
+      .theme-toggle {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        right: 20px;
+      }
+      
+      .back-to-top,
+      .print-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+      }
+      
+      .back-to-top {
+        right: 20px;
+      }
+      
+      .print-btn {
+        left: 20px;
+      }
+      
+      .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      
+      .lightbox-nav.prev {
+        left: 15px;
+      }
+      
+      .lightbox-nav.next {
+        right: 15px;
+      }
+      
+      .close-lightbox {
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
       }
     }
 
@@ -662,45 +968,51 @@
       }
 
       .profile-image-container {
-        width: 130px;
-        height: 130px;
+        width: 180px;
+        height: 180px;
       }
 
       header h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
 
       header .job-title {
-        font-size: 0.95rem;
-      }
-
-      .social-links {
-        gap: 0.5rem;
-      }
-
-      .social-links a {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.5rem;
+        font-size: 1.1rem;
       }
 
       .section-card {
-        padding: 1rem;
+        padding: 1.2rem;
       }
 
       h2 {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .thumbnail {
-        width: 85px;
-        height: 85px;
+        width: 100px;
+        height: 100px;
       }
       
-      .theme-toggle {
-        width: 40px;
-        height: 40px;
-        top: 15px;
-        right: 15px;
+      .social-links {
+        gap: 0.8rem;
+      }
+      
+      .social-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .languages-list {
+        gap: 0.8rem;
+      }
+      
+      .language-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -710,16 +1022,24 @@
   <div class="theme-toggle" id="themeToggle">
     <i class="fas fa-moon"></i>
   </div>
+  
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <button class="print-btn" id="printBtn" title="Print CV">
+    <i class="fas fa-print"></i>
+  </button>
 
   <header>
     <div class="profile-header">
       <div class="profile-image-container">
-        <img src="pictures/IMG_20250929_110535~4.jpg" alt="Abdelmageed Ahmed" class="profile-image" />
+        <img src="pictures/IMG_20250929_110535~4.jpg" alt="Abdelmageed Ahmed" class="profile-image" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';" />
       </div>
       <div class="profile-text">
         <h1>Abdelmageed Ahmed Babiker</h1>
-        <p class="job-title">Automation Engineer | HSE Supervisor </p>
-        <p class="location">Khartoum, Sudan</p>
+        <p class="job-title">Automation Engineer | HSE Supervisor</p>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Khartoum, Sudan</p>
         <div class="social-links">
           <a href="mailto:Abdelmageedahmedsco@gmail.com">
             <i class="fas fa-envelope"></i> Email
@@ -737,6 +1057,12 @@
 
   <div class="lightbox" id="lightbox">
     <div class="close-lightbox" onclick="closeLightbox()">×</div>
+    <button class="lightbox-nav prev" onclick="changeImage(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-nav next" onclick="changeImage(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="">
     </div>
@@ -746,9 +1072,9 @@
     <div class="section-card">
       <h2><i class="fas fa-user"></i> Profile</h2>
       <div class="section">
-        <p>Mechanical Engineer specializing in Industrial Automation.</p>
-         <p>Experienced HSE Supervisor with a strong foundation in industrial standards, operational reliability, and risk management.</p>
-         <p>I integrate safety focused practices into designing and implementing reliable and efficient control systems, including PLC, SCADA, and HMI. My work bridges engineering innovation with advanced safety principles to ensure secure and intelligent industrial processes.</p>
+        <p>Mechanical Engineer specializing in Industrial Automation with a strong focus on integrating safety protocols into automated systems.</p>
+        <p>Experienced HSE Supervisor with expertise in industrial standards, operational reliability, and comprehensive risk management strategies.</p>
+        <p>I bridge engineering innovation with advanced safety principles, designing and implementing reliable control systems (PLC, SCADA, HMI) while ensuring secure and intelligent industrial processes.</p>
       </div>
     </div>
 
@@ -762,13 +1088,13 @@
         <a href="https://www.redrockmining.co" target="_blank" class="company-link">
           <i class="fas fa-external-link-alt"></i> Visit Company Website
         </a>
-        <p class="date-location">Nile River State, Sudan | June 2024 – Present</p>
+        <p class="date-location"><i class="far fa-calendar-alt"></i> June 2024 – Present | <i class="fas fa-map-marker-alt"></i> Nile River State, Sudan</p>
         
         <ul>
           <li>Risk Assessment & Hazard Identification</li>
           <li>Incident Investigation & Root Cause Analysis</li>
           <li>Emergency Response Planning</li>
-          <li>Process Safety</li>
+          <li>Process Safety Management</li>
           <li>Inspection & Auditing</li>
           <li>Team Coordination & Training</li>
           <li>Team Leadership</li>
@@ -776,86 +1102,86 @@
         </ul>
         
         <div class="work-images">
-          <p><em>Work Images:</em></p>
-          <div class="image-gallery">
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092646.jpg')">
-              <img src="pictures/IMG_20251203_092646.jpg" alt="HSE Image 1" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+          <p>Work Images:</p>
+          <div class="image-gallery" data-gallery="hse">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092646.jpg', 0, 'hse')">
+              <img src="pictures/IMG_20251203_092646.jpg" alt="HSE Site Inspection" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-image\"></i>HSE Image 1</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092720.jpg')">
-              <img src="pictures/IMG_20251203_092720.jpg" alt="HSE Image 2" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092720.jpg', 1, 'hse')">
+              <img src="pictures/IMG_20251203_092720.jpg" alt="Safety Equipment Check" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-image\"></i>HSE Image 2</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092851.jpg')">
-              <img src="pictures/IMG_20251203_092851.jpg" alt="HSE Image 3" onerror="this.src='https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092851.jpg', 2, 'hse')">
+              <img src="pictures/IMG_20251203_092851.jpg" alt="Mining Safety Protocols" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-image\"></i>HSE Image 3</div>';">
             </div>
           </div>
         </div>
       </div>
       
-      <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+      <hr style="margin: 1.8rem 0; border: none; border-top: 1px solid var(--border-color);">
       
       <div class="section">
         <strong>Mechanical Engineer Trainee</strong>
         <span class="job-type">Internship</span>
         <p class="company-info">Albarajoub Company Ltd</p>
-        <a href="https://albarajoub.com" class="company-link" style="opacity: 0.7; cursor: default;">
-          <i class="fas fa-external-link-alt"></i>  Visit Company Website
+        <a href="https://albarajoub.com" target="_blank" class="company-link">
+          <i class="fas fa-external-link-alt"></i> Visit Company Website
         </a>
-        <p class="date-location">Khartoum,Sudan | March 2022 - April 2022</p>
+        <p class="date-location"><i class="far fa-calendar-alt"></i> March 2022 - April 2022 | <i class="fas fa-map-marker-alt"></i> Khartoum, Sudan</p>
         
         <ul>
-          <li>Corrective Maintenance</li>
-          <li>Preventive Maintenance</li>
-          <li>Equipment inspections</li>
-          <li>mechanical troubleshooting</li>
-          <li>Preparing maintenance logs</li>
+          <li>Corrective & Preventive Maintenance</li>
+          <li>Equipment Inspection & Troubleshooting</li>
+          <li>Mechanical System Analysis</li>
+          <li>Maintenance Documentation</li>
+          <li>Technical Report Preparation</li>
         </ul>
         
         <div class="work-images">
-          <p><em>Work Images:</em></p>
-          <div class="image-gallery">
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092006.jpg')">
-              <img src="pictures/IMG_20251203_092006.jpg" alt="Mechanical 1" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+          <p>Work Images:</p>
+          <div class="image-gallery" data-gallery="mechanical">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092006.jpg', 0, 'mechanical')">
+              <img src="pictures/IMG_20251203_092006.jpg" alt="Mechanical Maintenance" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cogs\"></i>Mechanical 1</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092418.jpg')">
-              <img src="pictures/IMG_20251203_092418.jpg" alt="Mechanical 2" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092418.jpg', 1, 'mechanical')">
+              <img src="pictures/IMG_20251203_092418.jpg" alt="Equipment Analysis" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cogs\"></i>Mechanical 2</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092456.jpg')">
-              <img src="pictures/IMG_20251203_092456.jpg" alt="Mechanical 3" onerror="this.src='https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092456.jpg', 2, 'mechanical')">
+              <img src="pictures/IMG_20251203_092456.jpg" alt="Technical Work" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cogs\"></i>Mechanical 3</div>';">
             </div>
           </div>
         </div>
       </div>
       
-      <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+      <hr style="margin: 1.8rem 0; border: none; border-top: 1px solid var(--border-color);">
       
       <div class="section">
         <strong>Cashier</strong>
         <span class="job-type">Part Time Job</span>
         <p class="company-info">Alzytoona Shipping Center</p>
-        <a href="https://www.facebook.com/share/1AcazsFF2n/">
-          <i class="fas fa-external-link-alt"></i> Facebook Page
+        <a href="https://www.facebook.com/share/1AcazsFF2n/" target="_blank" class="company-link">
+          <i class="fab fa-facebook"></i> Facebook Page
         </a>
-        <p class="date-location">Khartoum, Sudan | April 2021 - February 2022 | May 2022 - April 2023</p>
+        <p class="date-location"><i class="far fa-calendar-alt"></i> April 2021 - April 2023 | <i class="fas fa-map-marker-alt"></i> Khartoum, Sudan</p>
         
         <ul>
-          <li>Managing time and tasks efficiently</li>
-          <li>Teamwork and co-operation</li>
-          <li>Working under pressure</li>
-          <li>Good communication with customers</li>
-          <li>Paying attention to details</li>
+          <li>Time Management & Task Efficiency</li>
+          <li>Teamwork & Customer Service</li>
+          <li>Working Under Pressure</li>
+          <li>Attention to Detail</li>
+          <li>Financial Transaction Accuracy</li>
         </ul>
         
         <div class="work-images">
-          <p><em>Work Images:</em></p>
-          <div class="image-gallery">
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092230.jpg')">
-              <img src="pictures/IMG_20251203_092230.jpg" alt="Cashier 1" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+          <p>Work Images:</p>
+          <div class="image-gallery" data-gallery="cashier">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092230.jpg', 0, 'cashier')">
+              <img src="pictures/IMG_20251203_092230.jpg" alt="Customer Service" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cash-register\"></i>Cashier 1</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092133.jpg')">
-              <img src="pictures/IMG_20251203_092133.jpg" alt="Cashier 2" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092133.jpg', 1, 'cashier')">
+              <img src="pictures/IMG_20251203_092133.jpg" alt="Work Environment" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cash-register\"></i>Cashier 2</div>';">
             </div>
-            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092257.jpg')">
-              <img src="pictures/IMG_20251203_092257.jpg" alt="Cashier 3" onerror="this.src='https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'; this.onerror=null;">
+            <div class="thumbnail" onclick="openLightbox('pictures/IMG_20251203_092257.jpg', 2, 'cashier')">
+              <img src="pictures/IMG_20251203_092257.jpg" alt="Team Collaboration" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"image-placeholder\"><i class=\"fas fa-cash-register\"></i>Cashier 3</div>';">
             </div>
           </div>
         </div>
@@ -881,23 +1207,23 @@
         <div class="certification-item">
           <strong>IOSH Managing Safely</strong>
           <p class="issuer">Institution of Occupational Safety and Health</p>
-          <a href="https://very.iosh.com/?reference=74166582-01-KNHX" class="cert-link">
+          <a href="https://very.iosh.com/?reference=74166582-01-KNHX" target="_blank" class="cert-link">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
         
         <div class="certification-item">
-          <strong>Master Plc Programming</strong>
-          <p class="issuer">Course covering essential PLC programming skills, From basic logic and your first PLC program to advanced topics like HMI development, Internal register manipulation, And SCADA systems.</p>
-          <a href="https://alison.com/courses/master-plc-programming/resources?utm_source=google&utm_medium=cpc&utm_campaign=Demand-Gen_Sudan&gad_source=1&gad_campaignid=23278762041&gbraid=0AAAAADt7cD1HZa3pZ-AciYhZwoPBsSVyB&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_M2UkyG_-Zmc8e26Enw0rlJac7pJX62qJfx75qx1C8Je5gvyQM43oaAn8aEALw_wcB" class="cert-link">
+          <strong>Master PLC Programming</strong>
+          <p class="issuer">Comprehensive course covering essential PLC programming skills, from basic logic to advanced topics like HMI development, internal register manipulation, and SCADA systems.</p>
+          <a href="https://alison.com/courses/master-plc-programming/resources?utm_source=google&utm_medium=cpc&utm_campaign=Demand-Gen_Sudan&gad_source=1&gad_campaignid=23278762041&gbraid=0AAAAADt7cD1HZa3pZ-AciYhZwoPBsSVyB&gclid=Cj0KCQiAubrJBhCbARIsAHIdxD_M2UkyG_-Zmc8e26Enw0rlJac7pJX62qJfx75qx1C8Je5gvyQM43oaAn8aEALw_wcB" target="_blank" class="cert-link">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
         
         <div class="certification-item">
           <strong>Computer Applications</strong>
-          <p class="issuer">Operating systems, Internet basics, Microsoft Office programs</p>
-          <a href="https://drive.google.com/file/d/11C6btWTnsuugOn69p-oRfsQ5HgG1FAR7/view?usp=drivesdk" class="cert-link">
+          <p class="issuer">Operating systems, Internet basics, Microsoft Office programs (Word, Excel, PowerPoint)</p>
+          <a href="https://drive.google.com/file/d/11C6btWTnsuugOn69p-oRfsQ5HgG1FAR7/view?usp=drivesdk" target="_blank" class="cert-link">
             <i class="fas fa-external-link-alt"></i> View Certificate
           </a>
         </div>
@@ -907,14 +1233,49 @@
     <div class="section-card">
       <h2><i class="fas fa-language"></i> Languages</h2>
       <div class="languages-list">
-        <div class="language-item">Arabic</div>
-        <div class="language-item">English</div>
+        <div class="language-item">Arabic <span style="font-weight: 400; margin-left: 5px;">(Native)</span></div>
+        <div class="language-item">English <span style="font-weight: 400; margin-left: 5px;">(Professional)</span></div>
+      </div>
+    </div>
+    
+    <div class="section-card">
+      <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:Abdelmageedahmedsco@gmail.com">Abdelmageedahmedsco@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Location</strong><br>
+            Khartoum, Sudan
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <div>
+            <strong>LinkedIn</strong><br>
+            <a href="https://www.linkedin.com/in/abdelmageed-ahmed-a06a2523a" target="_blank">linkedin.com/in/abdelmageed-ahmed</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <div>
+            <strong>Facebook</strong><br>
+            <a href="https://www.facebook.com/Neezr" target="_blank">facebook.com/Neezr</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <footer>
     <span>&copy; 2025 Abdelmageed Ahmed. All rights reserved.</span>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for professional presentation</p>
   </footer>
 
   <script>
@@ -922,7 +1283,6 @@
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
     
-    // Check for saved theme preference
     let currentTheme = localStorage.getItem('theme') || 'light';
     updateTheme(currentTheme);
     
@@ -931,6 +1291,12 @@
       currentTheme = newTheme;
       localStorage.setItem('theme', newTheme);
       updateTheme(newTheme);
+      
+      // إضافة تأثير عند النقر
+      themeToggle.style.transform = 'rotate(360deg) scale(1.1)';
+      setTimeout(() => {
+        themeToggle.style.transform = '';
+      }, 400);
     });
     
     function updateTheme(theme) {
@@ -942,105 +1308,185 @@
       }
     }
 
-    // Lightbox functionality
-    function openLightbox(imageSrc) {
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Print functionality
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Lightbox functionality with gallery navigation
+    let currentGallery = '';
+    let currentIndex = 0;
+    const galleries = {
+      hse: [
+        'pictures/IMG_20251203_092646.jpg',
+        'pictures/IMG_20251203_092720.jpg',
+        'pictures/IMG_20251203_092851.jpg'
+      ],
+      mechanical: [
+        'pictures/IMG_20251203_092006.jpg',
+        'pictures/IMG_20251203_092418.jpg',
+        'pictures/IMG_20251203_092456.jpg'
+      ],
+      cashier: [
+        'pictures/IMG_20251203_092230.jpg',
+        'pictures/IMG_20251203_092133.jpg',
+        'pictures/IMG_20251203_092257.jpg'
+      ]
+    };
+
+    function openLightbox(imageSrc, index, gallery) {
+      currentGallery = gallery;
+      currentIndex = index;
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       
-      // Check if image exists, otherwise show placeholder
-      const img = new Image();
-      img.onload = function() {
-        lightboxImg.src = imageSrc;
-        lightboxImg.alt = 'Work Image';
-      };
-      img.onerror = function() {
-        // Show placeholder if image doesn't exist
-        lightboxImg.src = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
-        lightboxImg.alt = 'Placeholder - Replace with actual image';
-      };
-      img.src = imageSrc;
+      lightboxImg.src = imageSrc;
+      lightboxImg.alt = 'Work Image';
+      
+      // إضافة تأثير تحميل
+      lightboxImg.style.opacity = '0';
+      setTimeout(() => {
+        lightboxImg.style.opacity = '1';
+      }, 50);
       
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
-      
-      // إضافة إلى history لمنع الرجوع خارج الصفحة
-      history.pushState({ lightboxOpen: true }, '');
     }
 
-    function closeLightbox(e) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
+    function changeImage(direction) {
+      const galleryImages = galleries[currentGallery];
+      if (!galleryImages) return;
+      
+      currentIndex += direction;
+      
+      if (currentIndex < 0) {
+        currentIndex = galleryImages.length - 1;
+      } else if (currentIndex >= galleryImages.length) {
+        currentIndex = 0;
       }
       
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        lightboxImg.src = galleryImages[currentIndex];
+        lightboxImg.style.opacity = '1';
+      }, 300);
+    }
+
+    function closeLightbox() {
       const lightbox = document.getElementById('lightbox');
       lightbox.classList.remove('active');
       document.body.style.overflow = 'auto';
       
-      // إزالة من history إذا كنا أضفناها
-      if (history.state && history.state.lightboxOpen) {
-        history.back();
-      }
-      
-      return false;
+      // إعادة تعيين المؤشرات
+      currentGallery = '';
+      currentIndex = 0;
     }
 
-    // Close lightbox when clicking outside the image
+    // Close lightbox when clicking outside the image or with Escape key
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this || e.target.classList.contains('close-lightbox')) {
-        closeLightbox(e);
+        closeLightbox();
       }
     });
 
-    // Close lightbox with Escape key
     document.addEventListener('keydown', function(e) {
       const lightbox = document.getElementById('lightbox');
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        e.preventDefault();
-        e.stopPropagation();
-        closeLightbox(e);
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft' && lightbox.classList.contains('active')) {
+        changeImage(-1);
+      } else if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) {
+        changeImage(1);
       }
     });
 
-    // معالجة زر الرجوع في المتصفح
-    window.addEventListener('popstate', function(e) {
-      const lightbox = document.getElementById('lightbox');
-      if (lightbox.classList.contains('active')) {
-        closeLightbox(e);
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
         
-        // إذا كان popstate جاء من lightbox، نعود مرة أخرى
-        if (history.state && history.state.lightboxOpen) {
-          history.back();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 20,
+            behavior: 'smooth'
+          });
         }
-      }
-    });
-
-    // منع فتح الصورة في صفحة جديدة عند النقر عليها في gallery
-    document.querySelectorAll('.thumbnail').forEach(thumb => {
-      thumb.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
       });
     });
 
-    // Add animation to section cards
+    // إضافة تأثيرات دخول للعناصر
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.section-card');
       cards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         
         setTimeout(() => {
           card.style.opacity = '1';
           card.style.transform = 'translateY(0)';
-        }, 100 + index * 100);
+        }, 150 + index * 100);
       });
       
-      // إضافة history state أولي
-      history.replaceState({ page: 'main' }, '');
+      // تحميل الصور بشكل أفضل
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.loading = 'lazy';
+      });
+      
+      // إضافة تأثير عند التمرير
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+
+    // إضافة تأثيرات Hover للمحتوى
+    document.querySelectorAll('.section-card, .thumbnail, .contact-item, .certification-item').forEach(element => {
+      element.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+      });
+      
+      element.addEventListener('mouseleave', function() {
+        this.style.zIndex = '';
+      });
     });
   </script>
 </body>
-  </html>
+</html>
